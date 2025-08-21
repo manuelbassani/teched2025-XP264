@@ -28,6 +28,13 @@
         echo "List of modules with  kyma-cli-sa"
         ./kyma alpha module list --kubeconfig ./kyma-cli-sa.yaml
 
+        echo "deploy a docker image and expose it via an API Rule v2"   
+        #kubectl delete deployment httpbin-app --ignore-not-found=true --grace-period=10
+        #kubectl delete service httpbin-app --ignore-not-found=true
+        
+        kubectl delete all -l app.kubernetes.io/name=httpbin-app
+        ./kyma alpha app push --name httpbin-app --image kennethreitz/httpbin --istio-inject true --expose --container-port 80
+
 
 "name": "btp-runtime-dbe7346b-88da-430a-8777-4f6aa3e22b5e"
 "on":
