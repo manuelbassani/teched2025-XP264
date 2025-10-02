@@ -1,8 +1,8 @@
 # Exercise T3 - Use Transparent Proxy Kyma Module
 
-In this exercise, you will consume remote systems defined as destinations managed centrally in SAP BTP Destination service in a unified and virtually transparent way, powered by Transparent Proxy module, seamlessly integrated with other modules and services of SAP BTP Connectivity.
+In this exercise, you will _consume_ remote systems defined as destinations (managed centrally in SAP BTP Destination service) in a _simple_, _unified_ and _virtually transparent_ way. This is enabled by Transparent Proxy module, which is seamlessly integrated with other modules and services of SAP BTP Connectivity.
 
-For simplicity and illustration purposeses, you'd be starting cURL Pod and use the well-known cURL tool to technially connect and perform requests to the target systems.
+For simplicity and illustration purposeses, in this exercise, you will start a [cURL Pod](https://hub.docker.com/r/curlimages/curl-base), open a terminal to the Pod and use the well-known [cURL](https://curl.se/) tool to execute HTTP requests to the target systems.
 
 ## Exercise T3.1 Run a cURL Pod Included in the Istio Service Mesh
 
@@ -22,7 +22,7 @@ If you don't see a command prompt, try pressing enter.
 
 ```
 
-2. Install _jq_ for being able to easily parse the JSON response from the target system
+2. Install _jq_ tool for being able to easily parse the JSON response from the target system
 
 Command:
 ```

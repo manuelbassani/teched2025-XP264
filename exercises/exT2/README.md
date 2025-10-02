@@ -1,6 +1,6 @@
 # Exercise T2 - Configure Transparent Proxy Kyma Module
 
-In this exercise, you will configure Transparent Proxy as module in Kyma. This will allow you to locally consume destinations that managed centrally in SAP BTP Destination service, from within the Kyma instanc in a unified and virtually transparent way.
+In this exercise, you will _configure_ Transparent Proxy as module in Kyma. This will allow you to _locally_ consume destinations (managed centrally in SAP BTP Destination service) from within the Kyma instance, and technically connect to any remote system in a _simple_, _unified_ and _virtually transparent_ way.
 
 ## Exercise T2.1 Navigate to your working Namespace in Kyma Dashboard
 
@@ -31,9 +31,9 @@ In the home page of the Namespace of your choice, you can see Connectivity secti
 
 ## Exercise T2.3 Create a _static_ Destination Custom Resource
 
-In the home page of the Namespace of your choice, you can see Connectivity section, and under it you find Destination CR. Latter are used to formally expose and reference the destinations - either statically via dedicated or _static_ CRs or dynamically via _dynamic (gateway) CR.
+In the home page of the Namespace of your choice, you can see Connectivity section, and under it you find Destination CR. Latter are used to formally expose and reference the destinations - either statically via dedicated or _static_ CRs or dynamically via _dynamic_ (gateway) CR.
 
-1. Click here to create a new Destination CR
+1. Click here to create a new _static_ Destination CR
 <br>![](/exercises/exT2/images/T2_03_01.png)
 
 2. The actual Destination CR creation. In this example, the Destination CR is a _static_ one used to reference a specific destination that is accessible in the context of the account in use by Transparent Proxy based on the applied configuration.

@@ -1,6 +1,6 @@
 # Exercise T1 - Enable Transparent Proxy Kyma Module
 
-In this exercise, you will enable Transparent Proxy as module in Kyma. This will allow you to further configure it and expose destinations managed centrally in SAP BTP Destination service for local,unified and virtually transparent consumption within the Kyma instance.
+In this exercise, you will _enable_ Transparent Proxy as module in Kyma. This will allow you to further _configure_ it and expose destinations (managed centrally in SAP BTP Destination service) for _local_, _unified_ and _virtually transparent_ consumption within the Kyma instance.
 
 ## Exercise T1.1 Navigate To The Kyma Dashboard
 
@@ -18,15 +18,16 @@ Once working with BTP cockpit and navigated to the account overview page, you ca
 
 In the home page of the Kyma Dashabord, you can see an overview of the Kyma instance, for example, health status, important metadata, and link to the modules.
 
+1. Click here to navigate to the Modules
 <br>![](/exercises/exT1/images/T1_02_01.png)
 
-1. Click here.
+2. Click here to select and add the Transparent Proxy module
 <br>![](/exercises/exT1/images/T1_02_02.png)
 
-2. Module enablement has started. You may see it being in processing state
+3. Adding of the module has started. You may see it being in processing state
 <br>![](/exercises/exT1/images/T1_02_03.png)
 
-3. In a while, the module has been enabled and in healthy state, ready for further configuration and usage
+4. In a while, the module has been enabled and in healthy state, ready for further configuration and usage
 <br>![](/exercises/exT1/images/T1_02_04.png)
 
 ## Exercise T1.2 Explore What Changed In The Kyma Instance
