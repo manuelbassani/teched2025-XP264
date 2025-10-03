@@ -11,7 +11,24 @@ TODO: Add the picture of the master btp landscape...
 <img width="1669" height="841" alt="image" src="https://github.com/user-attachments/assets/5e9093ca-051a-462e-9b93-c2b8132c7166" />
 
 
+## Provider subaccount with shared services
 
+
+  * allow_access
+
+```
+20.39.212.71/32,20.117.177.87/32,172.187.240.229/32,45.148.14.0/24,95.214.184.0/24,13.105.117.0/24,13.105.49.0/24,34.141.69.247,34.159.216.62,34.159.191.69,130.214.104.0/24,20.42.117.61/32,20.84.67.105/32,51.8.106.72/32,130.33.112.244/32,74.176.216.39/32,20.89.73.170/32
+```
+
+  * instance mapping
+
+  * reconfigure hana cloud with another runtime context, for instance: uk-xp264  
+
+In the aftermath, both the allow_access list nad the mappings will be updated
+
+```
+20.39.212.71/32,20.117.177.87/32,172.187.240.229/32,45.148.14.0/24,95.214.184.0/24,13.105.117.0/24,13.105.49.0/24,34.141.69.247,34.159.216.62,34.159.191.69,130.214.104.0/24,20.42.117.61/32,20.84.67.105/32,51.8.106.72/32,130.33.112.244/32,74.176.216.39/32,20.89.73.170/32,172.187.193.188/32,20.117.121.230/32,20.117.240.186/32
+```
 
 ## s4hana HE4 destinations definitions  
 
