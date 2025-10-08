@@ -65,3 +65,11 @@ s4any     ExternalName   <none>       s4any-5cmhg.sap-transp-proxy-system.svc.cl
 You've now <b>configured</b> the Transparent Proxy via dynamic (gateway) Destination CR, and <b>enabled</b> local workloads to technically connect to any remote system defined as a destination in Destination service in the context of the account in use by Transparent Proxy based on the applied configuration.
 
 Continue to - [Exercise T3 - Use Transparent Proxy Kyma Module ](../exT3/README.md)
+
+## References
+* [Connectivity in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/7501fbc9aebd4e3180eddec977ca288d.html)
+* [Transparent Proxy in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/1700cfe070704d2e80aa76de1033a6c4.html)
+* [Transparent Proxy - Configuration Guide](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/2a22cd7872964e6a9ceb5af72920cfd0.html)
+* [Transparent Proxy - Operator](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/2d826aa388524bb8804223b5e2a31968.html)
+* [Transparent Proxy - Integration with SAP BTP Connectivity](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/aa9fc26f0c74495ea91612994016eaed.html)
+* [Transparent Proxy - Troubleshooting](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/fce292aeb9e24b7abd47c0b38f6fe8a9.html)

@@ -43,3 +43,13 @@ If interested or simply out of curiosity, you may further expolore the _sap-tran
 You've now <b>enabled</b> Transparent Proxy as Kyma Module. It's lifecycle management is governed by a special module operator, ensuring the target and actual state of the module do not differ and the module is healthy and available for the side workloads runing in the Kyma instance.
 
 Continue to - [Exercise T2 - Configure Transparent Proxy Kyma Module ](../exT2/README.md)
+
+## References
+* [Kyma Environment - Overview](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/468c2f3c3ca24c2c8497ef9f83154c44.html)
+* [Kyma Environment - Modules](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/0dda141a58d54f29a860a4b3164bf4a9.html)
+* [Administration and Operations in the Kyma Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/b8e16869e64a4abe93cc194aa6fdacf5.html)
+* [Adding and Deleting a Kyma Module](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/1b548e9ad4744b978b8b595288b0cb5c.html)
+* [SAP BTP Connectivity landing page](https://help.sap.com/docs/connectivity)
+* [Connectivity in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/7501fbc9aebd4e3180eddec977ca288d.html)
+* [Transparent Proxy in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/1700cfe070704d2e80aa76de1033a6c4.html)
+

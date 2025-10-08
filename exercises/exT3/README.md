@@ -99,3 +99,13 @@ You've now consumed remote systems defined as destinations in Destination servic
 You see how simple is to connect to arbirtary system defined as a destination in Destination service. You practically use the Destination CR as locally accessible hostname and do not do anything more but passing the mandatory API specific parameters. The complex parts are handled automatically by the Transparent Proxy and Destination service. If the target system is hosted on-premise, then the additional complexity is again handled automatically, this time with the automated usage of Connectivity Proxy module and Connectivity service.
 
 Continue to - [Exercise N - Excercise N ](../exN/README.md)
+
+## References
+* [Connectivity in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/7501fbc9aebd4e3180eddec977ca288d.html)
+* [Transparent Proxy in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/1700cfe070704d2e80aa76de1033a6c4.html)
+* [Transparent Proxy - Integration with SAP BTP Connectivity](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/aa9fc26f0c74495ea91612994016eaed.html)
+* [Transparent Proxy - Concepts](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/3f9e8f186d264062874b668ddacfa3fc.html)
+* [Transpaernt Proxy - Usage Overview](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/c5257cf110bf4b7b9054eab74ededff4.html)
+* [Transpaernt Proxy - Destination Custom Resource](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/fc7951e80cb0423ebc0d35e3443c32dc.html)
+* [Transpaernt Proxy - Destination Gateway (Dynamic Lookup of Destinations)](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/6836e007ebb24954b727f1524837f741.html)
+* [Transparent Proxy - Troubleshooting](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/fce292aeb9e24b7abd47c0b38f6fe8a9.html)
