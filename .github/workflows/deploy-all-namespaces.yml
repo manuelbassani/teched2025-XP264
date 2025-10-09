@@ -1,0 +1,19 @@
+name: Deploy all namespaces
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-all-namespaces:
+    runs-on: ubuntu-latest
+    permissions: 
+     contents: read
+     id-token: write
+    strategy:
+      matrix:
+        namespace: [xp264-001, xp264-002, xp264-003]
+    steps:
+    - uses: ./.github/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml
+      with:
+        NAMESPACE: ${{ matrix.namespace }}
+      secrets: inherit
