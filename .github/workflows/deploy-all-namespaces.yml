@@ -3,7 +3,7 @@
 
 name: Deploy all namespaces
 on:
-  workflow_dispatch:
+  workflow_dispatch: null
 
 jobs:
   deploy-all-namespaces:
