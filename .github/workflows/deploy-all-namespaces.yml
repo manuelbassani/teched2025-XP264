@@ -9,13 +9,12 @@ jobs:
   deploy-all-namespaces:
     runs-on: ubuntu-latest
     permissions: 
-      contents: read
-      id-token: write
-
+     contents: read
+     id-token: write
     strategy:
       matrix:
         namespace: [xp264-001, xp264-002]
     uses: ./.github/workflows/reuse.yml
     with:
       NAMESPACE: ${{ matrix.namespace }}
-    #secrets: inherit 
+    #secrets: inherit
