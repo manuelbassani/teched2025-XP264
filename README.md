@@ -4,7 +4,8 @@
 
 This repository contains the material for the SAP TechEd 2025 session catalog number XP264 - [**Explore how to run cloud-native applications on SAP BTP, Kyma runtime.**](https://www.sap.com/events/teched/berlin/flow/sap/te25/catalog-inperson/page/catalog/session/1749035076180001oik0)  
 
-Day-2 Operations: Maintenance, Monitoring, and Optimization
+  * Day-2 Operations: Maintenance, Monitoring, and Optimization
+  * Onpremise connectivity
 
 ## Overview
 
