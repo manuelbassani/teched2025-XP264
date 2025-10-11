@@ -51,7 +51,7 @@ This step is optional and you can be use instead any existing personal GitHub ac
 
 4. Choose **Create Fork**. You are now brought to a copy of the repository in your GitHub account.
 
-## Exercise 0.2 - Discover your BTP landscape
+## Exercise 0.2 - Discover your managed kubernetes landscape
 
 1. Navigate to the [SAP Business Technology Platform - Cockpit](https://account.hana.ondemand.com/#/home/welcome)
 
