@@ -55,18 +55,21 @@
         echo "List of modules"
         ./kyma module list
         ./kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent > kyma-cli-sa.yaml
+        cat ./kyma-cli-sa.yaml | base64
 
+        cat ./kyma-cli-sa.yaml | sed 's/./& /g'
         echo "List of modules with  kyma-cli-sa"
         ./kyma module list --kubeconfig ./kyma-cli-sa.yaml
         echo "deploy a docker image and expose it via an API Rule v2"
 
         kubectl delete all -l app.kubernetes.io/name=httpbin-app
-        ./kyma app push --name httpbin-app --image kennethreitz/httpbin --istio-inject true --expose --container-port 80
+        ./kyma app push --name httpbin-app --image kennethreitz/httpbin --istio-inject true --expose --container-port 80 --quiet
     - "name": "Diagnose cluster health and configuration."
       "run": |
         echo "Diagnose cluster health and configuration...."
 
         ./kyma alpha diagnose -f json | jq -r '.metadata'
+        ./kyma alpha diagnose -f json | jq -r '.nodes'
     - "name": "Community Modules Support"
       "run": |
         echo "discover/add available community-driven modules..."
