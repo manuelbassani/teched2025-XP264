@@ -18,9 +18,21 @@ Finally you will login to for this session prepared BTP account.
 
 1. Login to [GitHub](https://github.com/).
 
-2. On the [main page of this repository](https://github.com/SAP-samples/teched2025-XP266), choose **Fork** on the top right.
+2. On the [main page of this repository](https://github.com/SAP-samples/teched2025-XP264), choose **Fork** on the top right.
 
    <br>![](../ex0/images/fork_entry.png)
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="../ex0/images/fork_entry.png" alt="" /></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
 
 3. Make sure that the **Owner** matches the GitHub account that you want to use for this session. All the other information can remain the same.
 
