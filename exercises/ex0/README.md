@@ -1,16 +1,17 @@
 # Exercise 0 - Preparation Steps
 
-In this exercise, you will create your own copy of this repository and optionally, set up a GitHub account.
+You must have a personal github account for this session.  
 
-Finally you will login to for this session prepared BTP account.
 
-## Exercise 0.0 - (Optional) Create a GitHub account
+## Exercise 0.0 - Sign up for a new GitHub account
+
+This step is optional and you can be use instead any existing personal GitHub account of yours.
 
 1. Navigate to [GitHub](https://github.com/).
 
 2. Click **Sign up for GiHhub**.
 
-3. Alternatevly, click on **Continue with Google** to sign up using social login.
+3. Otherwise, you may click on **Continue with Google** to sign up using your Google social login.
 
 4. Follow the prompts to create your personal account.
 
@@ -20,14 +21,13 @@ Finally you will login to for this session prepared BTP account.
 
 2. On the [main page of this repository](https://github.com/SAP-samples/teched2025-XP264), choose **Fork** on the top right.
 
-   <br>![](../ex0/images/fork_entry.png)
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="../ex0/images/fork_entry.png" alt="" /></a></h1>
+<h1><a href="https://github.com/SAP-samples/teched2025-XP264"><img class="aligncenter" src="../ex0/images/fork_entry.png" alt="" /></a></h1>
 </div>
 </td>
 </tr>
@@ -36,7 +36,18 @@ Finally you will login to for this session prepared BTP account.
 
 3. Make sure that the **Owner** matches the GitHub account that you want to use for this session. All the other information can remain the same.
 
-   <br>![](../ex0/images/fork_details.png)
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="https://github.com/SAP-samples/teched2025-XP264"><img class="aligncenter" src="../ex0/images/fork_details.png" alt="" /></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
 
 4. Choose **Create Fork**. You are now brought to a copy of the repository in your GitHub account.
 
@@ -48,8 +59,18 @@ Finally you will login to for this session prepared BTP account.
 
 3. After the BPT Cockpit has been loaded, you should see following account structure:
 
-<img width="1146" height="589" alt="image" src="https://github.com/user-attachments/assets/bb958aee-cd70-496d-b73c-0736ba01c1c1" />
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="https://github.com/user-attachments/assets/bb958aee-cd70-496d-b73c-0736ba01c1c1" alt="" /></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
 
 | Account Name              | Type        |                                                                                                                                Description |
 | :------------------------ | :---------: | :------------------------------------------------------------------------------------------------------------------------ |
@@ -62,7 +83,18 @@ Finally you will login to for this session prepared BTP account.
 
 Each student's runtime context has a preconfigured SAP Cloud Connector attached, for instance:
 
-<img width="1661" height="733" alt="image" src="https://github.com/user-attachments/assets/5e92690b-41ad-4cf4-993a-f8486d0bb32d" />
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="https://github.com/user-attachments/assets/5e92690b-41ad-4cf4-993a-f8486d0bb32d" alt="" /></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
 
 ## Summary
 
