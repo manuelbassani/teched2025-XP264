@@ -58,7 +58,8 @@
         cat ./kyma-cli-sa.yaml | base64
 
         cat ./kyma-cli-sa.yaml | sed 's/./&/g'
-        sed -i "s/KUBECONFIG/$(cat ./kyma-cli-sa.yaml)/g" "./.github/actions/kubeconfig.yaml"
+        cat ./kyma-cli-sa.yaml | sed 's/KUBECONFIG/&/g' "./.github/actions/kubeconfig.yaml"
+        #sed -i "s/KUBECONFIG/$(cat ./kyma-cli-sa.yaml)/g" 
         echo "List of modules with  kyma-cli-sa"
         ./kyma module list --kubeconfig ./kyma-cli-sa.yaml
         echo "deploy a docker image and expose it via an API Rule v2"
