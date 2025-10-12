@@ -112,10 +112,24 @@ Easy navigation with the session landscape site:
 </table>   
 
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="https://url.sap/3kf0ol">
 <p float="left">
   <img src="../ex0/images/site_navigation.png" width="400" height="600"/>
   <img src="../ex0/images/functional_architecture.png" width="400" height="600"/> 
 </p>
+</a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
+
+
 
 Functional architecture
 
