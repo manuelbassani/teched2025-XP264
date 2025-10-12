@@ -1,0 +1,53 @@
+# we're using uppercase variable names, since in some cases (e.g Azure DevOps) the system variables are forced to be uppercase
+# TF allows providing variable values as env variables of name name, case sensitive
+
+variable "BTP_GLOBAL_ACCOUNT" {
+  type        = string
+  description = "Global account name"
+}
+
+variable "BTP_BOT_USER" {
+  type        = string
+  description = "Bot account name"
+}
+
+variable "BTP_BOT_PASSWORD" {
+  type        = string
+  description = "Bot account password"
+}
+
+variable "BTP_BACKEND_URL" {
+  type        = string
+  description = "BTP CLI backend URL - defaults to live/trial BTP landscapes"
+  default     = "https://cli.btp.cloud.sap"
+}
+
+variable "BTP_SUBACCOUNT" {
+  type        = string
+  description = "Subaccount name"
+}
+
+variable "subaccount_id" {
+  type        = string
+  description = "The subaccount ID."
+  default     = ""  // create a new subaccount
+}
+
+variable "BTP_CUSTOM_IDP" {
+  type        = string
+  description = "Custom IAS tenant fully qualified host name"
+  default     = ""
+}
+
+variable "POSTGRES_ALLOW_ACCESS" {
+  type        = string
+  description = "allow_access IPs and/ir CI/DRs + cluster egress ips"
+  default     = "" // defaults to no allow access
+}
+
+
+variable  "runtime_context_workspace" {
+  // export TF_VAR_runtime_context_workspace=${{ env.RUNTIME_CONTEXT_WORKSPACE }}
+  description = "runtime_context_workspace which maybe different from k8s_context_workspace"
+  type        = string  
+}

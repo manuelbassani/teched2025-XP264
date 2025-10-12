@@ -1,0 +1,47 @@
+//
+terraform {
+  required_providers {
+    btp = {
+      source  = "SAP/btp"
+      //version = "~>1.6.0"
+    }
+    jq = {
+      source  = "massdriver-cloud/jq"
+    }
+    http-full = {
+      source = "salrashid123/http-full"
+    }     
+    # https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+    }
+    kubectl = {
+      source  = "alekc/kubectl"
+    }  
+    qrcode = {
+      source = "jackivanov/qrcode"
+      //version = "1.0.0"
+    }
+  }
+}
+
+provider "jq" {}
+provider "http-full" {}
+
+# https://registry.terraform.io/providers/jackivanov/qrcode/latest/docs
+#
+provider "qrcode" {
+  # Configuration options
+}
+
+provider "btp" {
+  globalaccount  = var.BTP_GLOBAL_ACCOUNT
+  cli_server_url = var.BTP_BACKEND_URL
+  username       = var.BTP_BOT_USER
+  password       = var.BTP_BOT_PASSWORD
+  idp            = var.BTP_CUSTOM_IDP
+}
+
+
+provider "kubernetes" {}
+provider "kubectl" {}
