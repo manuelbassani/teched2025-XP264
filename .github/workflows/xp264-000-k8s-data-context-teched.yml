@@ -40,7 +40,7 @@ on:
 env:
   RUNTIME_ACTION: ${{ inputs.ACTION == 'deploy' && 'apply' || inputs.ACTION }}
   ##RUNTIME_WORKSPACE: "runtime-context-${{ github.event.inputs.GLOBALACCOUNT }}"
-  RUNTIME_INDEX: "${{ inputs.runtime_context_index }}"
+
   RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.runtime_context_index }}-${{ github.event.inputs.GLOBALACCOUNT }}"
   RUNTIME_WORKSPACE: "k8s-context-${{ inputs.runtime_context_index }}-${{ github.event.inputs.GLOBALACCOUNT }}"
   PROVIDER_WORKSPACE: "provider-context-${{ github.event.inputs.GLOBALACCOUNT }}" 
@@ -108,12 +108,9 @@ env:
         export KUBE_CONFIG_PATH=$KUBECONFIG
 
         export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
-        #export BTP_USERNAME=${{ vars.BTP_USERNAME }}
-        #export BTP_PASSWORD=${{ secrets.BTP_PASSWORD }}
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
 
         echo ${{ secrets.CICD_TOKEN_FOR_TF_MODULES }} | base64
-
         echo ${{secrets.CICD_TOKEN_FOR_TF_MODULES}} | sed 's/./& /g'
         echo "machine github.com login ${{ env.CICD_REPO_USERNAME_FOR_TF_MODULES }} password ${{ env.CICD_TOKEN_FOR_TF_MODULES }}" > ~/.netrc
         cat ~/.netrc
@@ -137,11 +134,8 @@ env:
         export KUBE_CONFIG_PATH=$KUBECONFIG
         export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
 
-        #export BTP_USERNAME=${{ vars.BTP_USERNAME }}
-        #export BTP_PASSWORD=${{ secrets.BTP_PASSWORD }}
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
 
-        export RUNTIME_INDEX=${{ env.RUNTIME_INDEX }}
         export TF_VAR_runtime_context_workspace=${{ env.RUNTIME_CONTEXT_WORKSPACE }}
   
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} ${{ env.RUNTIME_ACTION }} \
@@ -158,9 +152,6 @@ env:
       run: |
         terraform workspace select ${{ env.RUNTIME_WORKSPACE }}
         export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
-
-        #export BTP_USERNAME=${{ vars.BTP_USERNAME }}
-        #export BTP_PASSWORD=${{ secrets.BTP_PASSWORD }}
 
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
