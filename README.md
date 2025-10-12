@@ -39,7 +39,7 @@ The requirements to follow the exercises in this repository are...
 * #### [Exercise 1 - SAP BTP, Kyma runtime easy with kyma CLI ](exercises/ex1#exercise-1---set-up-your-delivery-pipeline-and-transport-landscape)
 
   * [Exercise 1.0 - Get your hands dirty with kyma CLI](exercises/ex1#exercise-10---get-your-hands-dirty-with-kyma-cli)
-  * [Exercise 1.1 - Firefighter access](exercises/ex1#exercise-11---create-a-copy-of-this-repository)
+  * [Exercise 1.1 - Firefighter access to your kyma cluster](exercises/ex1#exercise-11---fire-fighter-access-to-your-kyma-cluster)
 
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
