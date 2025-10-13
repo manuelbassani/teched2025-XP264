@@ -262,10 +262,10 @@ env:
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
         kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
-        kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kyma_parameters)
-        echo $kyma_parameters
-
-        echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters
+        #kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters)
+        #echo $kyma_parameters
+        #echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
@@ -279,7 +279,7 @@ env:
       run: |
 
         echo "kyma_provisioning_info"
-        echo ${{ steps.terraform_output.outputs.kyma_parameters }}
+        #echo ${{ steps.terraform_output.outputs.kyma_parameters }}
 
 "name": "k8s-data-context-teched"
 
