@@ -259,10 +259,10 @@ env:
 
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json > tf_output.json
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
         kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters > ./tf_output.json
         #kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters)
         #echo $kyma_parameters
         #echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
