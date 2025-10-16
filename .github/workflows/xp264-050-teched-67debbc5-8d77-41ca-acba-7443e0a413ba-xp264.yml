@@ -59,11 +59,11 @@
         echo "Adding APIRules to other custom domains"
         HOSTNAME=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("httpbin-\($namespace)")' )
         HTTPBIN_URL=https://$HOSTNAME
-        echo "$HTTPBIN_URL\n"
+        echo -e "$HTTPBIN_URL\n"
 
         kubectl get apirules -ojson -n $NAMESPACE  | jq '.items[] '  | jq 'del(.metadata["annotations","labels","creationTimestamp","resourceVersion","uid", "selfLink", "ownerReferences", "generation"], .status)' |  jq --arg namespace "$NAMESPACE" '.metadata |= . + {"name": "httpbin-\($namespace)-01" }' | jq --arg hostname "$HOSTNAME" '.spec |= . + {"gateway": "aws-route53-dns/quovadis-aws-route53-dns-gateway", "hosts": ["\($hostname)"] } ' | kubectl apply -n $NAMESPACE -f -
         HTTPBIN_URL=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("https://httpbin-\($namespace)")' )
-        echo "Additionally, httpbin-$NAMESPACE app has been made available under the custom domain at:\n$HTTPBIN_URL"
+        echo -e "Additionally, httpbin-$NAMESPACE app has been made available under the custom domain at:\n$HTTPBIN_URL"
         echo "HTTPBIN_URL=$HTTPBIN_URL" >> $GITHUB_OUTPUT
 
     - "name": "Simulate load on httpbin app in a given namespace"
