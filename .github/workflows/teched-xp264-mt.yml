@@ -148,6 +148,7 @@ env:
       env:
         RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        RUNTIME_ACTION: "apply"
         CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt-data/"
         PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt-data/"  
 
