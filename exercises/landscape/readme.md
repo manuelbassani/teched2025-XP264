@@ -285,6 +285,6 @@ Requirement already satisfied: typing-extensions>=4.0.0 in /usr/local/lib/python
 
 [notice] A new release of pip is available: 25.0.1 -> 25.2
 [notice] To update, run: pip install --upgrade pip
-
+  
 ```
 

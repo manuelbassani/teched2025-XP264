@@ -97,7 +97,7 @@
         echo "Get cluster metadata..."
 
         ./kyma alpha diagnose -f json | jq -r '.metadata'
-        DEEPLINK=$(kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+        DEEPLINK=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
         echo $DEEPLINK
         
     - "name": "Community Modules Support"
