@@ -48,12 +48,12 @@ Option 1.
   Access SAP Kyma dashboard.  
   You can use the easy navigation landscape dashboard with your allocated student's user name or use one of the kyma dashboard deep links below:
 
- | kyma region | KubeconfigURL (download) | Console URL (dashboard)
- | ------ | --------  | ------- 
- | uk-south| https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/6D0AF763-179E-4F84-8ED0-724B3C0C2C92 | https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92
- | japan-east | https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/79EB720B-2C16-4A7E-AA7F-108C4E3B7E98 | https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98
- | us-east | https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/72A4A32B-0D0A-47DE-90C9-A65D52C8ADBE | https://dashboard.kyma.cloud.sap/?kubeconfigID=72A4A32B-0D0A-47DE-90C9-A65D52C8ADBE
- | xp264-000 | https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/B427F082-0D0C-4657-9D99-56629CC03CF6 | https://dashboard.kyma.cloud.sap/?kubeconfigID=B427F082-0D0C-4657-9D99-56629CC03CF6
+ | kyma region | KubeconfigURL (download) | Console URL (dashboard) | QRcode
+ | ------ | --------  | ------- | --------
+ | uk-south| https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/6D0AF763-179E-4F84-8ED0-724B3C0C2C92 | https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92 | "../landscape/uksouth/kyma-dashboard-url-uksouth.png"
+ | japan-east | https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/79EB720B-2C16-4A7E-AA7F-108C4E3B7E98 | https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98 |
+ | us-east | https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/72A4A32B-0D0A-47DE-90C9-A65D52C8ADBE | https://dashboard.kyma.cloud.sap/?kubeconfigID=72A4A32B-0D0A-47DE-90C9-A65D52C8ADBE |
+ | xp264-000 | https://kyma-env-broker.cp.kyma.cloud.sap/kubeconfig/B427F082-0D0C-4657-9D99-56629CC03CF6 | https://dashboard.kyma.cloud.sap/?kubeconfigID=B427F082-0D0C-4657-9D99-56629CC03CF6 | 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
