@@ -38,8 +38,8 @@ The requirements to follow the exercises in this repository are...
     * All the SAP Kyma environments have been configured to the same template (via terraform automation).  
     * Each SAP Kyma kubernetes cluster offers the same setup (with very minor differences)...
 
-  * Last but not least, you will be able to *play* with a pre-deployed multitenant application which follows BTP multitenancy paradigm.  
-  
+  * Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application which follows BTP multitenancy paradigm.  
+
 ## Exercises
 
 * #### [Exercise 0 - Preparation Steps](exercises/ex0#exercice-0---preparation-steps)
