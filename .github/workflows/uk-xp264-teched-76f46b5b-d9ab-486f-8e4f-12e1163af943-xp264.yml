@@ -117,7 +117,7 @@
         APIRule resource to be ready\"\n  sleep 6\ndone        \nfor f in {1..10};
         do curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done\necho
         -e \"You can now check the logs, metrics and traces in SAP Cloud Logging portal:\\nhttps://url.sap/rw43o5\"\n"
-"name": "uk-xp264-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264"
+"name": "uk-xp264--xp264"
 "on":
   "workflow_dispatch":
     "inputs":
