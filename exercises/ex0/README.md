@@ -153,4 +153,4 @@ Now that you have everything you need to successfully go through this TechEd ses
 - Access to the SAP BTP managed kubernetes landscape with the easy navigation site
 - An idea of the functional architecture behind the solution brief
 
-Continue to [BTP Kyma easy with kyma CLI](../ex1/README.md)
+Continue to [First things first. Getting to know SAP managed kubernetes runtime](../ex1/README.md)
