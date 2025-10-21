@@ -1,38 +1,23 @@
 on:
   workflow_dispatch:
-    inputs:
-      ACTION:
-        description: "setup/destroy k8s data context"
-        required: true
-        default: "apply"
-        type: "choice"
-        options:
-          - "apply"
-          - "destroy"
-      IDP:
-        description: "platform idp"
-        required: true
-        default: "anuk8cmfw.accounts.ondemand.com"
-        type: "choice"
-        options:
-          - "anuk8cmfw.accounts.ondemand.com"
 
       subaccount_name:
         description: "k8s region prefix"
         required: true
-        default: "xp264-000"
+        default: "uk-south"
         type: "choice"
         options:
-          - "xp264-000"
-          - "xp264-001"
           - "uk-south"
           - "japanese-east"
           - "us-east"
+          - "xp264-000"
+          - "xp264-001"
           - "uk-xp264"
 
 ## Add shared Environment Variables across jobs here ##
 env:
-  RUNTIME_ACTION: ${{ inputs.ACTION == 'deploy' && 'apply' || inputs.ACTION }}
+  RUNTIME_ACTION: "apply"
+  IDP: "anuk8cmfw.accounts.ondemand.com"
 
   CONFIG_DIRECTORY: "./exercises/ex1/k8s-data/"
   PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-data/"  
@@ -213,7 +198,7 @@ env:
         kyma alpha diagnose -f json | jq -r '.metadata'
         #kyma alpha diagnose -f json | jq -r '.nodes'
 
-        DEEPLINK=$(kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+        DEEPLINK=$(kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?idp=${{ env.IDP }}#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
         echo $DEEPLINK
 
         GLOBALACCOUNT=$(kyma alpha diagnose -f json | jq -r '.metadata.globalAccountID ' ) 
@@ -224,9 +209,9 @@ env:
     - name: Get short-lived GitHub-issued JWT
       id: get-github-jwt
       run: |
-        #githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://${{ github.event.inputs.IDP }}" | jq -r '.')
+        #githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://${{ env.IDP }}" | jq -r '.')
         #echo $githubJwt | base64
-        githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://${{ github.event.inputs.IDP }}" | jq -r '.value')
+        githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://${{ env.IDP }}" | jq -r '.value')
 
         EXP_TS=$(echo $githubJwt | jq -R 'split(".") | .[1] | @base64d | fromjson | .exp')
         echo $EXP_TS
@@ -282,7 +267,7 @@ env:
   
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} ${{ env.RUNTIME_ACTION }} \
         -var BTP_GLOBAL_ACCOUNT=${{steps.cluster_info.outputs.GLOBALACCOUNT}} \
-        -var BTP_CUSTOM_IDP=${{ github.event.inputs.IDP }} \
+        -var BTP_CUSTOM_IDP=${{ env.IDP }} \
         -var BTP_SUBACCOUNT=${{ github.event.inputs.subaccount_name }} \
         -var POSTGRES_ALLOW_ACCESS=${{ vars.POSTGRES_ALLOW_ACCESS }} \
         -auto-approve -no-color
@@ -341,7 +326,7 @@ env:
 #        echo "htmloutput"
 #        echo ${{ steps.json2html.outputs.htmloutput }}
 
-"name": "k8s-data-context-teched"
+"name": "k8s-data-context"
 
 "permissions":
   "contents": "read"
