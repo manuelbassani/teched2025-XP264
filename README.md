@@ -11,7 +11,7 @@ This repository contains the material for the SAP TechEd 2025 session catalog nu
 
 This session introduces attendees to **Day-2** operation with SAP BTP, Kyma runtime - a flexible and easy way to connect and extend enterprise applications in the cloud-native world.  
 
-SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based on Gardener, extended by set of building blocks called Kyma modules. The idea is that each instance of the Kyma runtime is a separate Kubernetes cluster with its own set of modules. Clusters are not shared between customers, and each customer has its own isolated environment. All instances are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of the underlying hyperscaler project, the Gardener Cluster, and the Kyma modules.
+> SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based on Gardener, extended by set of building blocks called Kyma modules. The idea is that each instance of the Kyma runtime is a separate Kubernetes cluster with its own set of modules. Clusters are not shared between customers, and each customer has its own isolated environment. All instances are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of the underlying hyperscaler project, the Gardener Cluster, and the Kyma modules.
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -19,7 +19,7 @@ SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based 
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/kyma-runtime-stack.drawio.svg" alt="" height="600"/></a></h1>
+<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="" height="600"/></a></h1>
 </div>
 </td>
 </tr>
