@@ -92,11 +92,14 @@ The requirements to follow the exercises in this repository are...
   * [Exercise T1.3 - Explore What Changed In The Kyma Instance](exercises/exT1#exercise-t12-explore-what-changed-in-the-kyma-instance)
 
 
-* #### [Exercise T2 - Enable Transparent Proxy Kyma Module](exercises/ex3#exercise-3---exploring-kyma-telemetry-with-sap-cloud-logging)
+* #### [Exercise T2 - Configure Transparent Proxy Kyma Module](exercises/exT2#exercise-t2---configure-transparent-proxy-kyma-module)
 
-  * [Exercise T2.0 - Simulate some load](exercises/exT1#exercise-t11-navigate-to-the-kyma-dashboard)
+  * [Exercise T2.1 - Navigate to your working Namespace in Kyma Dashboard](exercises/exT2#exercise-t21-navigate-to-your-working-namespace-in-kyma-dashboard)
+  * [Exercise T2.2 - Create a dynamic Destination Custom Resource](exercises/exT2#exercise-t22-create-a-dynamic-destination-custom-resource)
+  * [Exercise T2.3 - Create a static Destination Custom Resource](exercises/exT2#exercise-t23-create-a-static-destination-custom-resource)
+  * [Exercise T2.4 - Explore the results of the creation of the Destination CRs via Kubectl](exercises/exT2#exercise-t24-explore-the-results-of-the-creation-of-the-destination-crs-via-kubectl)
 
-* #### [Exercise T3 - Enable Transparent Proxy Kyma Module](exercises/ex3#exercise-3---exploring-kyma-telemetry-with-sap-cloud-logging)
+* #### [Exercise T3 - Use Transparent Proxy Kyma Module](exercises/ex3#exercise-3---exploring-kyma-telemetry-with-sap-cloud-logging)
 
   * [Exercise T2.0 - Simulate some load](exercises/ex3#exercise-30---simulate-some-load)
 
