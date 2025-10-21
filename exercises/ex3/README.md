@@ -90,8 +90,6 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 - Check the overview dashboard. Apply the filters as shown below to narrow down details to your cluster and application
 
 
-  ![overview](./assets/telemetry-cls-kyma-overview.png)
-
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
@@ -106,31 +104,28 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 
 - Similarly check `Four golden signals` and `usage` dashboards
 
-
-  ![4-g-s](./assets/telemetry-cls-4-golden-signals.png)
-
+  * four golden signals
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-4-golden-signals.png" alt="4-g-s" height="600"/></a></h1>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-4-golden-signals.png" alt="4-g-s" /></a></h1>
 </div>
 </td>
 </tr>
 </tbody>
 </table>   
 
-  ![usage](./assets/telemetry-cls-usage.png)
-
+  * usage
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-usage.png" alt="usage" height="600"/></a></h1>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-usage.png" alt="usage" /></a></h1>
 </div>
 </td>
 </tr>
