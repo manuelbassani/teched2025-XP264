@@ -175,9 +175,9 @@ response->set_text( |Hello World! | ).
 
 
 
-## Exercise 1.4 - Getting to know your kyma cluster meatadata
+## Exercise 1.4 - Getting to know your kyma cluster
 
-Let's leverage the kyma cli to get simple metadata
+Let's leverage the kyma cli to get simple metadata from a kyma cluster
 
 ```
 kyma alpha diagnose -f json | jq '.metadata'
@@ -282,12 +282,12 @@ spec:
 
 
 ```
-## Exercise 1.3 - Getting diagnostic information with terraform
+## Exercise 1.5 - Accessing other diagnostic information with btp and kubernetes terraform providers
 
 Run the following github action: 
 
 
-## Exercise 1.5 - BTP multitenancy with kyma
+## Exercise 1.6 - BTP multitenancy with kyma
 
 
 2.	Click here.

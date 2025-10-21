@@ -9,7 +9,7 @@ This repository contains the material for the SAP TechEd 2025 session catalog nu
 
 ## Overview
 
-This session introduces attendees to **Day-2** operation with SAP BTP, Kyma runtime - a flexible and easy way to connect and extend enterprise applications in the cloud-native world.  
+This session introduces attendees to **Day-2** operation with SAP BTP, Kyma runtime - to help connect and extend enterprise applications in the cloud-native world.  
 
 > SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based on Gardener, extended by set of building blocks called Kyma modules. The idea is that each instance of the Kyma runtime is a separate Kubernetes cluster with its own set of modules. Clusters are not shared between customers, and each customer has its own isolated environment. All instances are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of the underlying hyperscaler project, the Gardener Cluster, and the Kyma modules.
 
@@ -62,12 +62,15 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 0.2 - Discover your SAP BTP managed kubernetes landscape](exercises/ex0#exercise-02---discover-your-managed-kubernetes-landscape)
   * [Exercise 0.3 - Solution brief. Functional architecture](exercises/ex0#exercise-03---solution-brief-funtional-architecture)
 
-* #### [Exercise 1 - SAP BTP, Kyma runtime easy with kyma CLI ](exercises/ex1#exercise-1---set-up-your-delivery-pipeline-and-transport-landscape)
+* #### [Exercise 1 - First things first. Getting acquainted with SAP BTP, Kyma Runtime (SKR)](exercises/ex1#exercise-1---first-things-first-getting-acquainted-with-sap-btp-kyma-runtime-skr)
 
-  * [Exercise 1.0 - Get your hands dirty with kyma CLI](exercises/ex1#exercise-10---get-your-hands-dirty-with-kyma-cli)
-  * [Exercise 1.1 - Firefighter access to your kyma cluster](exercises/ex1#exercise-11---fire-fighter-access-to-your-kyma-cluster)
-  * [Exercise 1.2 - Getting to know your kyma cluster](exercises/ex1#exercise-12---getting-to-know-your-kyma-cluster)
-  * [Exercise 1.5 - Multitenancy playground](exercises/ex1#exercise-15---btp-multitenancy-with-kyma)
+  * [Exercise 1.0 - Discover SAP Kyma architecture](exercises/ex1#exercise-10---discover-sap-kyma-architecture)
+  * [Exercise 1.1 - Easy access to your teched landscape.](exercises/ex1#exercise-11---easy-access-to-your-teched-landscape)
+  * [Exercise 1.2 - Discover Kyma CLI](exercises/ex1#exercise-11---discover-kyma-cli)
+  * [Exercise 1.3 - Firefighter access to your kyma cluster](exercises/ex1#exercise-11---fire-fighter-access-to-your-kyma-cluster)
+  * [Exercise 1.4 - Getting to know your kyma cluster in more details](exercises/ex1#exercise-12---getting-to-know-your-kyma-cluster)
+  * [Exercise 1.5 - Accessing other diagnostic information with btp and kubernetes terraform providers](exercises/ex1#exercise-15---btp-multitenancy-with-kyma)
+  * [Exercise 1.6 - Multitenancy playground](exercises/ex1#exercise-15---btp-multitenancy-with-kyma)
 
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
