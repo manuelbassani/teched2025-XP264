@@ -33,11 +33,13 @@ permissions:
 
 jobs:
   collect-diagnostic-data:
+    steps:
+      env:
+        export IDP=${{ env.IDP }}
+        export CLUSTER_CONTEXT=${{ env.CLUSTER_CONTEXT }}
     strategy:
       max-parallel: 4
       matrix:
-        CLUSTER_CONTEXT: "${{ env.CLUSTER_CONTEXT }}"
-        IDP: "${{ env.IDP }}"
         namespace: [
                       "xp264-001",
                       "xp264-002",
@@ -94,5 +96,5 @@ jobs:
     uses: ./.github/workflows/_k8s-data-context-student.yml
     with:
       NAMESPACE: ${{ matrix.namespace }}
-      CLUSTER_CONTEXT: ${{ matrix.CLUSTER_CONTEXT }}
-      IDP: ${{ matrix.IDP }}
+      CLUSTER_CONTEXT: $CLUSTER_CONTEXT
+      IDP: $IDP
