@@ -79,7 +79,7 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 1.2 - Explore Kyma runtime environment with the ready made automation flows](exercises/ex1#exercise-12---explore-kyma-runtime-environment-with-the-ready-made-automation-flows)
   * [Exercise 1.3 - Zoom on Kyma CLI](exercises/ex1#exercise-13---zoom-on-kyma-cli)
   * [Exercise 1.4 - Firefighter access to your kyma cluster](exercises/ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster)
-  * [Exercise 1.5 - Getting to know your kyma cluster better](exercises/ex1#exercise-15---getting-to-know-your-kyma-cluster)
+  * [Exercise 1.5 - Getting to know your kyma cluster better](exercises/ex1#exercise-15---getting-to-know-your-kyma-cluster-better)
   * [Exercise 1.6 - Accessing diagnostic information](exercises/ex1#exercise-16---accessing-other-diagnostic-information-with-btp-and-kubernetes-terraform-providers)
   * [Exercise 1.7 - Multitenancy playground](exercises/ex1#exercise-17---btp-multitenancy-with-sap-kyma)
 
