@@ -100,6 +100,7 @@ Quoting after [Kyma CLI | SAP Help](https://help.sap.com/docs/btp/sap-business-t
 
 > Kyma CLI is an essential tool for application developers who want to get started quickly and efficiently with SAP BTP, Kyma runtime. Designed to streamline workflows, it simplifies complex tasks, enabling developers to deploy and manage applications easily.
 
+Good to know: It is already pre-installed on the tech laptops.  
 
 ```
 kyma version
@@ -129,6 +130,15 @@ Flags:
       --skip-extensions         Skip fetching extensions from the target Kyma environment
 
 Use "kyma [command] --help" for more information about a command.
+```
+
+Alternatively, [Kyma CLI action](https://github.com/marketplace/actions/setup-kyma-cli) is already part of the automated CI/CD workflows and is available for installation in pipeline from the [github action marketplace](https://github.com/marketplace?query=kyma).  
+
+
+```
+- uses: kyma-project/setup-kyma-cli@v1
+  with:
+    - version: latest
 ```
 
 Please get familiar with the available [commands](https://github.com/kyma-project/cli/tree/3.2.0/docs/user/gen-docs)... 
