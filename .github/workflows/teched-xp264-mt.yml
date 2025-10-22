@@ -234,7 +234,7 @@ env:
         export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
 
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
+        #terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output faas-app-xp264-049-saas
 
