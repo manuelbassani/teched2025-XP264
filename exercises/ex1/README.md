@@ -75,8 +75,8 @@ Feel free to add any additional information you might like to retrieve...
 
 Good to know:
 - For the best experience, please use the right click to open workflow links into a tab or into a new window.  
-- The ready made CI/CD workflows are to be manually triggered.  
-  * For instance:
+- The ready made CI/CD workflows are to be manually triggered, for instance:  
+  * admin and student:
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -98,6 +98,7 @@ Good to know:
 </tbody>
 </table> 
 
+  * diagnostic data:
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -118,11 +119,14 @@ Good to know:
 </table> 
 
 Good to know: 
-- The automated workflows leverage the dynamic OIDC credentials with Github acting as the IDP provider. 
-- Thus, there is no need to rely on static credentials or 
+- The security is paramount!
+- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the IDP provider. 
+- Thus, there is no need to rely on static credentials or use any vault
+- The implemented mechanism ensure the credentials are rotated automatically which makes is suitable for long running pipelines as well.
+
 
 Homework:
-- Feel free to add any additional information you might like to retrieve...
+- Think to add/amend any additional information you might like to retrieve...
 
 ## Exercise 1.3 - Zoom on Kyma CLI
 
