@@ -155,9 +155,9 @@ env:
         kubectl config current-context
         kubectl config get-contexts
 
-    - "name": "check namespaced permissions"
+    - "name": "check namespaced permissions and resources"
       "run": |
-        echo -e "checking namespace $NAMESPACE permissions..."
+        echo -e "checking namespaced permissions: $NAMESPACE..."
         kubectl auth can-i --list --namespace $NAMESPACE
         kubectl auth can-i get gateways --namespace $NAMESPACE
         kubectl auth can-i create apirules --namespace $NAMESPACE
@@ -167,7 +167,7 @@ env:
         kubectl auth can-i get gateways -A
         echo "display all gateways in the cluster"
         kubectl get gateways -A
-        echo -e "display all pods and secrets in the namespace: $NAMESPACE"
+        echo -e "display all pods and secrets in the namespace: $NAMESPACE..."
         kubectl get pod -n $NAMESPACE
         kubectl get secrets -n $NAMESPACE
 
@@ -176,7 +176,7 @@ env:
       uses: jupyterhub/action-k8s-namespace-report@v1
       if: always()
       with:
-       namespace: $NAMESPACE
+       namespace: ${{ env.NAMESPACE }}
 
     - "name": "install kyma cli"
       uses: kyma-project/setup-kyma-cli@v1
