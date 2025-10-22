@@ -333,8 +333,24 @@ In order to subscribe or to retrieve an existing subscription for your session u
 <p float="left">
   <img src="../ex1/images/subscription-job.png" width="450" height="600"/>
   <img src="../ex1/images/subscription-manifest.png" width="450" height="600"/>
-  <img src="../ex1/images/subscription-url.png" width="450" height="800"/> 
-  <img src="../ex1/images/subscribed-app.png" width="450" height="800"/> 
+  <img src="../ex1/images/subscription-url.png" /> 
+</p>
+</a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="https://mt-xp264-001-teched-80a5defe.b84edf3.kyma.ondemand.com">
+<p float="left">
+  <img src="../ex1/images/subscribed-app.png" height="800"/> 
 </p>
 </a></h1>
 </div>
