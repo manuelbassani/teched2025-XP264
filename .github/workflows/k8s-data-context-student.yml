@@ -22,12 +22,19 @@ permissions:
   contents: read
   id-token: write
 
+
 jobs:
-  collect-diagnostic-data:
+  cluster-context:
     "runs-on":
     - "ubuntu-latest"    
+
+    outputs:
+      cluster_context: ${{ steps.cluster_context.outputs.CLUSTER_CONTEXT }}
+
+
     steps:
     - name: CLUSTER_CONTEXT
+      id: cluster_context
       shell: bash
       run: |
 
@@ -41,7 +48,12 @@ jobs:
             }}"
 
 
-        export CLUSTER_CONTEXT=${{ env.CLUSTER_CONTEXT }}
+        echo 'CLUSTER_CONTEXT=$CLUSTER_CONTEXT'  >> "$GITHUB_OUTPUT"
+
+
+jobs:
+  collect-diagnostic-data:
+    needs: cluster-context
     strategy:
       max-parallel: 4
       matrix:
@@ -101,5 +113,5 @@ jobs:
     uses: ./.github/workflows/_k8s-data-context-student.yml
     with:
       NAMESPACE: ${{ matrix.namespace }}
-      CLUSTER_CONTEXT: $CLUSTER_CONTEXT
+      CLUSTER_CONTEXT: ${{ fromJSON(needs.cluster-context.outputs.CLUSTER_CONTEXT) }}
       IDP: "anuk8cmfw.accounts.ondemand.com"
