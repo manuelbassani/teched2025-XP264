@@ -1,4 +1,4 @@
-name: k8s-data-context
+name: k8s-data-context-student
 on:
   workflow_dispatch:
     inputs:
@@ -89,7 +89,7 @@ jobs:
                       "xp264-050"
                   ]
 
-    uses: ./.github/workflows/_k8s-data-context.yml
+    uses: ./.github/workflows/_k8s-data-context-student.yml
     with:
       NAMESPACE: ${{ matrix.namespace }}
       CLUSTER_CONTEXT: ${{ env.cluster }}

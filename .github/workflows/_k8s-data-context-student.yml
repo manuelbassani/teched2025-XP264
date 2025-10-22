@@ -300,7 +300,7 @@ env:
 #        echo "htmloutput"
 #        echo ${{ steps.json2html.outputs.htmloutput }}
 
-"name": "_k8s-data-context"
+"name": "_k8s-data-context-student"
 "on":
   "workflow_call":
     "inputs":
