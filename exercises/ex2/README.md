@@ -24,7 +24,7 @@ horizontalpodautoscaler.autoscaling/faas-srv autoscaled
 
 - step3:  
 
-After a littlr while the HPA will be up and running:  
+After a little while the HPA will be up and running:  
 s
 ```
 kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml                                             
@@ -58,6 +58,13 @@ What about scaling down to zero ?
 
 After completing these steps you will have...
 
+- remove the HPA autoscaler
+
+```
+kubectl delete hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
+horizontalpodautoscaler.autoscaling "faas-srv" deleted
+
+```
 
 ## Summary
 
