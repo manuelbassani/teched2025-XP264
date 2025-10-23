@@ -54,14 +54,14 @@ The requirements to follow the exercises in this repository are...
   * Alternatively, you may use VSCode on your teched laptop terminal and other plugins you may be familiar with.
 
   * As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance: 
-   - SAP Cloud Identity Services (SAP IAS), 
-   - SAP Cloud Logging, 
-   - SAP HANA Cloud,
-   - ArgoCDaaS,
-   - BTP Connectivity services,
-   - S4/HANA On-premise (private cloud) with SAP Cloud Connector in the private network.
+     - SAP Cloud Identity Services (SAP IAS), 
+     - SAP Cloud Logging, 
+     - SAP HANA Cloud,
+     - ArgoCDaaS,
+     - BTP Connectivity services,
+     - S4/HANA On-premise (private cloud) with SAP Cloud Connector in the private network.
 
-  * All the SAP Kyma environments have been configured to the same template (via terraform automation).  
+  * All of the SAP Kyma environments have been configured to the same template (via terraform automation).  
 
 
   * Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application which follows BTP multitenancy paradigm.  
@@ -82,9 +82,8 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 1.2 - Explore Kyma runtime environment with the ready made automation flows](exercises/ex1#exercise-12---explore-kyma-runtime-environment-with-the-ready-made-automation-flows)
   * [Exercise 1.3 - Zoom on Kyma CLI](exercises/ex1#exercise-13---zoom-on-kyma-cli)
   * [Exercise 1.4 - Firefighter access to your kyma cluster](exercises/ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster)
-  * [Exercise 1.5 - Getting to know your kyma cluster better](exercises/ex1#exercise-15---getting-to-know-your-kyma-cluster-better)
-  * [Exercise 1.6 - Accessing diagnostic information](exercises/ex1#exercise-16---accessing-other-diagnostic-information-with-btp-and-kubernetes-terraform-providers)
-  * [Exercise 1.7 - Multitenancy playground](exercises/ex1#exercise-17---btp-multitenancy-with-sap-kyma)
+  * [Exercise 1.5 - Kyma diagnostic check](exercises/ex1#exercise-15---getting-to-know-your-kyma-cluster-better)
+  * [Exercise 1.6 - Multitenancy playground. Subscribe to a kyma multitenant application](exercises/ex1#exercise-16---btp-multitenancy-with-sap-kyma)
 
 
 * #### [Exercise 2 - Using External Scalers. Keda](exercises/ex12#exercise-2---first-things-first-getting-acquainted-with-sap-btp-kyma-runtime-skr)

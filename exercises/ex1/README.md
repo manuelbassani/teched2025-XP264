@@ -261,7 +261,7 @@ kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-
 ```  
 
 
-## Exercise 1.5 - Getting to know your kyma cluster better
+## Exercise 1.5 - Kyma diagnostic check
 
 Let's leverage the kyma cli to get simple metadata from a kyma cluster
 
@@ -305,15 +305,14 @@ kyma alpha diagnose -f json | jq '.nodes[] | tojson'
 "{\"machineInfo\":{\"name\":\"shoot--kyma-stage--a416537-cpu-worker-0-z1-69d94-hd29q\",\"architecture\":\"amd64\",\"kernelVersion\":\"6.12.47-cloud-amd64\",\"osImage\":\"Garden Linux 1877.4\",\"containerRuntime\":\"containerd://2.1.4\",\"kubeletVersion\":\"v1.33.3\",\"operatingSystem\":\"linux\"},\"capacity\":{\"cpu\":\"4\",\"memory\":\"16384092Ki\",\"eph
 ```
 
-After completing these steps you will have...
 
 
-## Exercise 1.6 - Accessing other diagnostic information with btp and kubernetes terraform providers
+  * Accessing other diagnostic information with btp and kubernetes terraform providers
 
 Run the following github action: 
 
 
-## Exercise 1.7 - BTP multitenancy with SAP Kyma
+## Exercise 1.6 - Subscribe to a kyma multitenant application
 
 In order to subscribe or to retrieve an existing subscription for your session user (xp264-0xx) run the following github action: 
 
@@ -410,5 +409,5 @@ Good to know:
 ## Summary
 
 
-Continue to - [Exercise 2 - Exercise 2 Description](../ex2/README.md)
+Continue to - [Exercise 2 - Use External Scalers. Keda](../ex2/README.md)
 
