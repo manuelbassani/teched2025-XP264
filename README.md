@@ -53,10 +53,10 @@ The requirements to follow the exercises in this repository are...
 
 - The good news is you may run the **GHA-based exercises** directly from any browser from your forked repository on the provided teched laptop.
 
-- 👉 Run and take time to inspect the results of the built-in automations. Ask questions. And if you feel like, go ahead and create your own variants as well.
+- 👉 Run and take time to inspect the results of the built-in automations. Ask questions. And if you feel like doing, go ahead and create your own variants as well.
 - 👉 The recommendation is, however, to go with the flow of the exercises, inspect the results, ask questions and leave the rest for the homework.
 
-- For all other exercises which may require a terminal use, the best is to use a built-in VSCode terminal window.
+- For all other exercises which may require a terminal use, you may use the built-in VSCode terminal window.
 
 - As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance: 
    - SAP Cloud Identity Services (SAP IAS), 
