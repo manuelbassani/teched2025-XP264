@@ -84,7 +84,7 @@ The requirements to follow the exercises in this repository are...
     ``` 
   - jq, curl. [kyma cli](https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Windows_x86_64.zip) 
 
-```
+```mermaid
 architecture-beta
     service dns(logos:aws-route53)[Route 53]
     service cf(logos:aws-cloudfront)[CloudFront]
