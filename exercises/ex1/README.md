@@ -123,6 +123,10 @@ Explanation. What has happened?
 ----------
 - You have manually triggered the pre-configured CI/CD automation workflows.
 - Workflows execution is divided into steps. Each step represents a dedicated task.
+- Diagnostic data collection from kyma clusters is done using both Kyma CLI and with several Terraform providers, namely:
+  * SAP BTP TF provider
+  * kubernetes provider 
+  * kubectl provider
 
 👉 Inspect the steps of each of the worklow you have run, as depicted below:
 
@@ -161,10 +165,9 @@ Explanation. What has happened?
 
 Good to know:
 - The security is paramount!
-- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job. 
+- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job.
 - Thus, there is no need to rely on static credentials or be compelled to use a vault.
 - The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.
-
 - In a nutshell, the automation workflows: 
   - 🔐 leverage GitHub's OIDC token for secure authentication
   - ⚙️ set up your Kubernetes kubeconfig with single or multiple contexts
@@ -181,10 +184,7 @@ Good to know:
 
 📖 Learn more: [Using GitHub Actions OpenID Connect in Kubernetes](https://blogs.sap.com/2022/09/23/using-github-actions-openid-connect-in-kubernetes/)
 
-- Diagnostic data collection from kyma clusters is done using both Kyma CLI and with several Terraform providers, namely:
-  * SAP BTP TF provider
-  * kubernetes provider 
-  * kubectl provider
+
 
 Excercise takeaways:
 - Ease of use with the emphasis on lowering the cost of the run with Day-2 operations
@@ -266,15 +266,21 @@ You can initially download the kubeconfig from one of the links below or directl
 
 Good to know:  
 - Relying on a user-OIDC kubeconfig is not very convenient due to the periodic redirects that may cause timeouts, even in a terminal window.
-- Let's create a permenent or temporary service account based kubeconfig (with uk-south)
-- Choose the uk-south tile or click on the provided deep link
+
+- 👉 Let's create a permenent or temporary service account based kubeconfig (with uk-south)
+- 👉 Choose the uk-south tile or click on the provided deep link
 
 ```
 kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+```
+or
 
-
+```
 kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --time 1h  --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+```
 
+
+```
 apiVersion: v1
 clusters:
 - cluster:
@@ -411,7 +417,7 @@ sequenceDiagram
 
 ## Exercise 1.6 - Subscribe to a kyma multitenant application
 
-In order to subscribe or to retrieve an existing subscription for your session user (xp264-0xx) run the following github action: 
+👉 In order to subscribe or to retrieve an existing subscription for your session user (xp264-0xx) run the following github action: 
 
 | Run Subscription workflow | Retrieve the subscription URL | Retrieve the consumer tenant URL
 | -------- | ------------- | ----------
