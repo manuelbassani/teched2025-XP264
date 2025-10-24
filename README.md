@@ -33,6 +33,7 @@ graph TD
     B --> C[Gardener Kubernetes cluster]
     C --> D[Hyperscaler project]
     A --> E[Kyma Control Plane]
+    A --> F[BTP Services]
 ```
 </p>
 </div>
