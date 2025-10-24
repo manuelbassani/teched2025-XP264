@@ -171,24 +171,34 @@ Good to know:
 - The implemented mechanism ensures the credentials are rotated automatically which makes is suitable for long running pipelines as well.
 
 
-Homework:
+Takeaway:
 - Think about nny additional cluster information you might like to add or amend...
 
 ## Exercise 1.3 - Zoom on Kyma CLI
 
-Quoting after [Kyma CLI | SAP Help](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-cli):  
+ - In a nutshell, Kyma CLI extends the capabilities of the ubiquitous kubectl CLI to a range of kyma specific features.  
 
-> Kyma CLI is an essential tool for application developers who want to get started quickly and efficiently with SAP BTP, Kyma runtime. Designed to streamline workflows, it simplifies complex tasks, enabling developers to deploy and manage applications easily.
+- [Kyma CLI action](https://github.com/marketplace/actions/setup-kyma-cli) is already part of the automated CI/CD workflows
+- It is available for installation in pipelines from the [github actions marketplace](https://github.com/marketplace?query=kyma).  
+
+```
+- uses: kyma-project/setup-kyma-cli@v1
+  with:
+    - version: latest
+```
+
 
 Good to know: 
 - It is already pre-installed on the tech laptops.  
-- It is also available out-of-the-box in the automation workflows for this session.
+- It is also available out-of-the-box in the automation workflows prepared for this session.
+
+👉 run `kyma version`
 
 ```
-kyma version
 Kyma-CLI Version: 3.2.0
 ```
 
+👉 run kyma -h
 ```
 kyma -h     
 Use this command to manage Kyma modules and resources on a cluster.
@@ -214,14 +224,6 @@ Flags:
 Use "kyma [command] --help" for more information about a command.
 ```
 
-Alternatively, [Kyma CLI action](https://github.com/marketplace/actions/setup-kyma-cli) is already part of the automated CI/CD workflows and is available for installation in pipeline from the [github actions marketplace](https://github.com/marketplace?query=kyma).  
-
-
-```
-- uses: kyma-project/setup-kyma-cli@v1
-  with:
-    - version: latest
-```
 
 Please get familiar with the available [commands](https://github.com/kyma-project/cli/tree/3.2.0/docs/user/gen-docs)... 
 
@@ -246,7 +248,8 @@ You can initially download the kubeconfig from one of the links below or directl
 | [xp264-000](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/20b6061c-64aa-4397-bc01-df7348704173) | https://url.sap/jdleyl | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=B427F082-0D0C-4657-9D99-56629CC03CF6 ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
 | [uk-xp264]() |https://url.sap/tyapw7 | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=0FD84322-535C-4047-89CE-47FC775938FC ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
 
-- Relying on a user-OIDC kubeconfig is not very convenient due to the periodis authentication redirects thant may cause timeouts, even in a terminal window.
+Good to know:  
+- Relying on a user-OIDC kubeconfig is not very convenient due to the periodic redirects that may cause timeouts, even in a terminal window.
 - Let's create a permenent or temporary service account based kubeconfig (with uk-south)
 - Choose the uk-south tile or click on the provided deep link
 
@@ -305,8 +308,8 @@ kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-
 
 Let's leverage the kyma cli to get simple metadata from a kyma cluster
 
+👉 run `kyma alpha diagnose -f json | jq '.metadata'`
 ```
-kyma alpha diagnose -f json | jq '.metadata'
 {
   "globalAccountID": "4c526f8b-cca9-4837-8b43-87824e3a4d10",
   "subaccountID": "5524c764-8893-4530-8eb8-feb9e6110f16",
