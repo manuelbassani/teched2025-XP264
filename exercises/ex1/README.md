@@ -34,6 +34,7 @@ Some of the modules are added by default (istio, api-gateway and btp-operator), 
 ---
 title: A Mermaid sequence diagram showing the system flow between K8s components to start a container.
 config:
+  look: handDrawn
   theme: neutral
   themeVariables:
     primaryColor: "#00ff00"
@@ -49,6 +50,8 @@ sequenceDiagram
     participant sched as control plane<br><br>scheduler
     participant kubelet as node<br><br>kubelet
     participant container as node<br><br>container<br>runtime
+
+    autonumber
     me->>apiSrv: 1. kubectl create -f pod.yaml
     apiSrv-->>etcd: 2. save new state
     cntrlMgr->>apiSrv: 3. check for changes
@@ -161,24 +164,7 @@ sequenceDiagram
     Note left of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
     Note left of Admin Worklow (cluster-wide): Choose a workflow<br/>and open it<br/>with the right click.
 ```
-```mermaid
----
-title: my title
-config:
-  theme: base
-  themeVariables:
-    primaryColor: "#00ff00"
-  securityLevel: "loose"
-  layout: elk
----
 
-flowchart TD
-  n1["This is sample label"]
-  n1@{ img: "https://static.mermaidchart.dev/whiteboard/default-image-shape.png"}
-
-
-
-```
 </p>
 </div>
 
