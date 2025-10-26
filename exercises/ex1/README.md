@@ -91,9 +91,9 @@ graph TD
     D(Setup Kube Context) -- kubeconfig permissions check --> E
     E(check permissions) -- the belows steps may differ from one worklow to another --> F(Other steps)
 
-    click B "http://www.github.com"  "This is a tooltip for a link" _blank
-    click C "http://www.github.com"  "This is a tooltip for a link" _blank
-    click D "http://www.github.com"  "This is a tooltip for a link" _blank
+    click B "http://www.github.com" "This is a tooltip for a link" _blank
+    click C "http://www.github.com" "This is a tooltip for a link" _blank
+    click D "http://www.github.com" "This is a tooltip for a link" _blank
 
 ```
 </p>
