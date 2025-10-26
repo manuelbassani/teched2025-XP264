@@ -89,9 +89,9 @@ graph TD
     C[Install helm] -- create kubeconfig with dynamic credentials --> D
     D(Setup Kube Context) -- kubeconfig permissions check --> E
     E(check permissions) -- the below steps may differ from one worklow to another --> F{Other steps}
-    F -->|Admin| G[cluster-wide]
-    F -->|Student| H[namespaced]
-    F -->|Diagnostic| I[fa:fa-car namespaced]    
+    F -->|cluster-wide| G[admin]
+    F -->|namespaced| H[student]
+    F -->|namespaced| I[Diagnostic]    
 
     click A href "https://docs.github.com/en/actions/get-started/understand-github-actions" _parent
     click B href "https://github.com/marketplace/actions/checkout" "checkout repository" _blank
