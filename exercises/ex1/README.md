@@ -172,14 +172,8 @@ config:
 ---
 
 flowchart TD
-    A["Christmas"] -- Get money --> B("Go shopping")
-    B --> C{"Let me think"}
-    C -- One --> D["Laptop"]
-    C -- Two --> E["iPhone"]
-    C -- Three --> F["fa:fa-car Car"]
-
    n1["This is sample label"]
-   @n1{ img: '../landscape/uksouth/kyma-dashboard_url_uksouth.png', w='75', pos="b" />")
+   n1@{ img: '../landscape/uksouth/kyma-dashboard_url_uksouth.png', w='75', pos="b" />")
 ```
 </p>
 </div>
