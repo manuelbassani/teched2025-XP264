@@ -127,6 +127,7 @@ sequenceDiagram
     Note left of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
     Note left of Admin Worklow (cluster-wide): Choose a workflow<br/>and open it<br/>with the right click.
 
+    DIR("<img src='../landscape/uksouth/kyma-dashboard_url_uksouth.png'; width='75' />")
 ```
 </p>
 </div>
