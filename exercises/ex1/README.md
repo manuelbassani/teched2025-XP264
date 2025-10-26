@@ -133,6 +133,11 @@ They come in three different flavors, namely as:
 <p float="left">  
 
 ```mermaid
+---
+config:
+  look: classic
+  theme: neutral
+---  
 graph TD
     A[Set up job] -- checkout repository --> B
     B(Check out Git repository) --> C
