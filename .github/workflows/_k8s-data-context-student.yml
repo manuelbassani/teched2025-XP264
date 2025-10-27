@@ -348,10 +348,10 @@ env:
         #kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters | jq -R)
         #echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
 
-        #kymaruntime_kubeconfig_base64=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kymaruntime_kubeconfig_base64)
+        kymaruntime_kubeconfig_base64=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kymaruntime_kubeconfig_base64)
         #echo $kymaruntime_kubeconfig_base64
 
-        #echo "kymaruntime_kubeconfig_base64=$kymaruntime_kubeconfig_base64" >> $GITHUB_OUTPUT
+        echo "kymaruntime_kubeconfig_base64=$kymaruntime_kubeconfig_base64" >> $GITHUB_OUTPUT
         #echo  -e "$kymaruntime_kubeconfig_base64" | base64 -d
 
         ls -al $CONFIG_DIRECTORY
@@ -361,6 +361,13 @@ env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
         RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
         PROVIDER_WORKSPACE: "provider-context-${{steps.cluster_info.outputs.GLOBALACCOUNT}}" 
+
+    - name: Save kubeconfig for later use
+      run: |
+        # Example: Upload kubeconfig as artifact
+        echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig_base64 }}" | base64 -d > ./my-kubeconfig.yaml
+        cat ./my-kubeconfig.yaml
+
 
 #    - name: Convert JSON to HTML Table
 #      uses: Teebra/JSON-to-HTML-table@v2.0.0
