@@ -51,7 +51,7 @@ This is mandatory to run the session exercises which are implemented as github a
 
 ## Exercise 0.2 - The rules of the game
 
-Access to the solution landscape via the Easy Navigation dashboard:  
+Access to the solution landscape is provided via the Easy Navigation dashboard:  
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -75,6 +75,7 @@ The students can pick and choose any available kyma cluster region the following
 | japan-east (eu20/azure)               |  JAPAN EAST region | kyma environment with the cluster in the japan east region         |
 | xp264-00  (eu20/azure)             |  UK SOUTH region  | kyma environment with the cluster in the uk south region         |
 | xp264-001  (eu10/aws)                |  EU Central region | kyma environment with the cluster in the eu central region         |
+| xp264-045  (eu20/azure)                |  UK SOUTH region | kyma environment with the cluster in the uk south region         |
 | xp264-050  (eu20/azure)              |  UK SOUTH region | kyma environment with the cluster in the uk south region        |
 
 
