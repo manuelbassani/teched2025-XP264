@@ -77,7 +77,8 @@ horizontalpodautoscaler.autoscaling "faas-srv" deleted
 
 ```
 
-```
+> [!NOTE]
+> ~~~rust
 cat <<EOF | kubectl apply -f - --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
@@ -97,7 +98,7 @@ spec:
     metadata:
       value: "50"
 EOF
-```
+> ~~~
 
 `scaledobject.keda.sh/faas-srv created`
 
