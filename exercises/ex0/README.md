@@ -12,7 +12,7 @@ This step is optional and you can be use instead any existing personal GitHub ac
 - Otherwise, you may click on **Continue with Google** to sign up using your Google social login.
 - Follow the prompts to create your personal account.
 
-## Exercise 0.1 - Create a Copy of This Repository
+## Exercise 0.1 - Fork the teched2025-XP264 repository. Activate github actions at the fork
 
  - Login to [GitHub](https://github.com/).
  - On the [main page of this repository](https://github.com/SAP-samples/teched2025-XP264), choose **Fork** on the top right.
@@ -49,8 +49,7 @@ This step is optional and you can be use instead any existing personal GitHub ac
 
 ## Exercise 0.2 - The rules of the game
 
-
-Access to the landscape via Easy Navigation dashboard:  
+Access to the solution landscape via Easy Navigation dashboard:  
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
