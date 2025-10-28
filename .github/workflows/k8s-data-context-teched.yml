@@ -361,7 +361,7 @@ env:
 
         terraform workspace select -or-create ${{ env.RUNTIME_WORKSPACE }} || echo "Workspace ${{ env.RUNTIME_WORKSPACE }} already exists or cannot be created"
 
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} init -upgrade -no-color
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} init -upgrade -no-color -lock=false
         export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
 
       env:
@@ -383,7 +383,7 @@ env:
 
         export TF_VAR_runtime_context_workspace=${{ env.RUNTIME_CONTEXT_WORKSPACE }}
   
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} ${{ env.RUNTIME_ACTION }} \
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} ${{ env.RUNTIME_ACTION }} -lock=false \
         -var BTP_GLOBAL_ACCOUNT=${{steps.cluster_info.outputs.GLOBALACCOUNT}} \
         -var BTP_CUSTOM_IDP=${{ env.IDP }} \
         -var BTP_SUBACCOUNT=${{ github.event.inputs.subaccount_name }} \
@@ -406,7 +406,7 @@ env:
         export KUBE_CONFIG_PATH=$KUBECONFIG
 
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
+        #terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
         kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
