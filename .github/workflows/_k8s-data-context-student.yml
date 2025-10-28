@@ -435,7 +435,8 @@ env:
         echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig }}" > ./my-kubeconfig2.yaml
         cat ./my-kubeconfig2.yaml 
         echo "${{ steps.terraform_output.outputs.kubeconfig_sa }}" > ./my-kubeconfig3.yaml
-        cat ./my-kubeconfig3.yaml | sed 's/./& /g'
+        #cat ./my-kubeconfig3.yaml | sed 's/./& /g'
+        cat ./my-kubeconfig3.yaml
 
         kubectl get nodes --kubeconfig ./my-kubeconfig3.yaml
         kyma alpha diagnose -f json --kubeconfig ./my-kubeconfig3.yaml | jq -r '.metadata' 
