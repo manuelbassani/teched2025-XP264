@@ -11,12 +11,14 @@ This repository contains the material for the SAP TechEd 2025 session catalog nu
 
 This session introduces attendees to **Day-2** operations with SAP BTP, Kyma runtime - a managed kubernetes environment to help connect and extend enterprise applications in the cloud-native world.  
 
+<!---
 In a nutshell, SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based on Gardener, extended by a set of building blocks called **Kyma modules**.  
 The idea being that each instance of SAP BTP Kyma runtime environment is a separate Kubernetes cluster with its own set of modules.  
 All these clusters are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of 
  - the underlying hyperscaler project, 
  - the Gardener Cluster, 
  - and the Kyma modules.
+--->
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -30,7 +32,7 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
  - the underlying hyperscaler project, 
  - the Gardener Cluster, 
  - and the Kyma modules.
-
+<hr>
 ```mermaid
 
 flowchart TD
