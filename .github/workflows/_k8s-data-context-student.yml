@@ -356,7 +356,7 @@ env:
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
-        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{ inputs.NAMESPACE }}"
         PROVIDER_WORKSPACE: "provider-context-${{steps.cluster_info.outputs.GLOBALACCOUNT}}" 
 
     - name: Terraform Apply 
@@ -382,7 +382,7 @@ env:
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
-        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{ inputs.NAMESPACE }}"
         PROVIDER_WORKSPACE: "provider-context-${{steps.cluster_info.outputs.GLOBALACCOUNT}}" 
 
     # https://stackoverflow.com/questions/69925970/how-to-save-terraform-output-variable-into-a-github-action-s-environment-variabl
@@ -424,7 +424,7 @@ env:
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
-        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{ inputs.NAMESPACE }}"
         PROVIDER_WORKSPACE: "provider-context-${{steps.cluster_info.outputs.GLOBALACCOUNT}}" 
 
     - name: Save kubeconfig for later use
