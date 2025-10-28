@@ -445,23 +445,9 @@ Use "kyma [command] --help" for more information about a command.
 ## Exercise 1.4 - Fire-fighter access to your kyma cluster
 
 There are two ways to gain access to a kyma cluster in XP264 session landscape, namely:
-- from a terminal window using the downloaded user OIDC kubeconfig with either `kubectl` or `kyma CLI` and
-- from within a github action workflow and/or terraform automation (preferred way)
+- from a terminal window using the downloaded user OIDC kubeconfig with either `kubectl` and/or `kyma CLI`
+- from within a github action diagnostic workflow with the embeded terraform automation (the preferred way)
 
-We shall capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
-
-
-<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
-<tbody>
-<tr style="height: 193px;">
-<td style="width: 71.6%; height: 193px;">
-<div> 
-<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
-</div>
-</td>
-</tr>
-</tbody>
-</table> 
 
 
 The first method requires a kubectl oidc plugin (already pre-installed on the laptops) and cannot be performed in a headless context, for instance from a CI/CD pipeline or workflow.  
@@ -539,9 +525,6 @@ kyma alpha kubeconfig generate --serviceaccount kyma-cli-view-sa  --namespace de
 kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-000 --permanent --clusterrole view --cluster-wide --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
 ```  
 
-
-## Exercise 1.5 - Terraforming kyma runtime environment
-
 Let's leverage the kyma cli to get simple metadata from a kyma cluster
 
 👉 run `kyma alpha diagnose -f json | jq '.metadata'`
@@ -585,7 +568,30 @@ kyma alpha diagnose -f json | jq '.nodes[] | tojson'
 ```
 
 
+## Exercise 1.5 - Terraforming kyma runtime environment
+
 Accessing other diagnostic information with btp and kubernetes terraform providers.
+
+THe built-in terraform automation is designed to use the very kyma cluster backend it is run against as its remote backend to preserve the terraform state.  
+That's extremely convient as it allows to explore the gathered information at any time time and have it processed with other tools, etc...
+It could be, for instance, shared with the SAP Kyma support.
+
+
+- 👉 RLet's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div> 
+<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
+
 - 👉 Run the Data Collection Workflow
 
 
