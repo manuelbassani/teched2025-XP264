@@ -298,7 +298,7 @@ Explanation. What has happened?
 >
 >  - 🔐 built-in GitHub's OIDC token trust for secure authentication
 >  - ⚙️ easy setup of your Kubernetes kubeconfig with a single or multiple cluster contexts
->  - 🚀 can run kubectl commands in your workflow
+>  - 🚀 can run kubectl and helm commands in your workflow
 >  - 🚀 can run kyma cli commands in your workflow
 >  - 🚀 can run terraform automation flows in your workflow
 >
@@ -313,19 +313,19 @@ Explanation. What has happened?
 
 
 
-Excercise takeaways:
-- Ease of use with the emphasis on lowering the cost of the run with Day-2 operations
-- Think about any additional cluster information you might like to add or amend...
+Principal excercise takeaways:
+- The automation workflows offer ease of use with the emphasis on security and on lowering the cost of the run with Day-2 operations
+- The Day-1 auto-generated automation workflows templates facilitate the Day-2 operations and allow for targeted extensions of the built-in flows.
 
 ## Exercise 1.3 - Zoom on Kyma CLI (optional)
 
 In a nutshell, Kyma CLI extends the capabilities of the ubiquitous kubectl CLI against a range of kyma specific features.  
 
-
-Good to know: 
-- It is already pre-installed on the teched laptops and can be used from either a terminal window or VSCode integrated terminal
-- It is also available out-of-the-box in the automation workflows prepared for this session.
-- It is available for [installation](https://github.com/marketplace/actions/setup-kyma-cli) in the github CI/CD pipelines from the [github actions marketplace](https://github.com/marketplace?query=kyma).  
+> [!TIP]
+> Good to know: 
+> - It is already pre-installed on the teched laptops and can be used from either a terminal window or VSCode integrated terminal
+> - It is also available out-of-the-box in the automation workflows prepared for this session.
+> - It is available for [installation](https://github.com/marketplace/actions/setup-kyma-cli) in the github CI/CD pipelines from the [github actions marketplace](https://github.com/marketplace?query=kyma).  
 
 
 👉 run `kyma version`
@@ -377,7 +377,7 @@ You can initially download the kubeconfig from one of the links below or directl
 
 * Here goes the table with the links to all btp and k8s resources...  
 
-> [!TIP]
+> [!NOTE]
 > | Region (BTP Cockpit) | Kubeconfig (download) | Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced) | Data Collection Workflow (cluster-wide)
 > | :--------- | :---------:  | --------- | :--------- | :------- | -----------
 > | [uk-south](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/4457fb7f-3296-40cf-b66b-aac3d9d4a2b2) | https://url.sap/q9176k | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
