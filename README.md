@@ -95,12 +95,16 @@ The requirements to follow the exercises in this repository are...
   - ✅ SAP Cloud Identity Services acting as a platform IDP on the BTP side of the house has been federated with the Github actions OIDC Provider
   - ✅ As a result, the very short-lived [credentials](https://docs.github.com/en/actions/concepts/security/openid-connect#understanding-the-oidc-token) are being fetched and rotated automatically on the behalf of the repository user for both kubernetes and btp platform operations.
 
-- The good news is you may run the **GHA-based exercises** directly, from your forked repository, in a browser on the **provided** teched laptop.
 > [!WARNING]
 > Personal devices should not be used for this session.
 
-- 👉 Run and take time to inspect the results of the built-in automations. Ask questions. And if you feel like doing, go ahead and create your own variants as well.
-- 👉 The recommendation is, however, to go with the flow of the exercises, inspect the results, ask questions and leave the rest for the homework.
+- However, the good news is you may run the **GHA-based exercises** directly, from your forked repository, in a browser on the **provided** teched laptops.
+
+> [!TIP]
+> Session directions. 
+> The session is pretty packed with content.  To make the best use of your time you may want to follow the below tips.
+> - 👉 Run and take time to inspect the results of the built-in automations. Ask questions. And if you feel like doing, go ahead and create your own variants as well.
+> - 👉 The recommendation is, however, to go with the flow of the exercises, inspect the results, ask questions and leave the rest for the homework.
 
 - For all other exercises which may require a terminal use, you may use the built-in VSCode terminal window.
 
