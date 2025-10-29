@@ -2,6 +2,11 @@
 
 Day-2 Operations include: Management, Maintenance, Monitoring, and Optimization
 
+The Kubernetes landscape lifecycle is divided into so-called routines or days, namely:
+- Day-0 -- Planning and Design
+- Day-1 -- Configuration and Deployment
+- Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
+
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -9,11 +14,6 @@ Day-2 Operations include: Management, Maintenance, Monitoring, and Optimization
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div> 
-
-The Kubernetes landscape lifecycle is divided into so-called routines or days, namely:
-- Day-0 -- Planning and Design
-- Day-1 -- Configuration and Deployment
-- Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
 
 
 ```mermaid
@@ -53,14 +53,15 @@ graph TD
 
 
 > [!IMPORTANT]
-> With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.   
-> That includes kubernetes versions updates, security patches, overall monitoring of the underlying infrastructure, etc.  
-> All SAP Kyma kubernetes extensions - the kyma modules are fully managed and supported as well.
-> Customer have a choice between the fast and the regular channels with regard to the modules.  
-> The fast channel offer a 14-day window to try out things before the regular channel module gets promoted.  
-> SAP L1 /L2 /L3 support teams are there to assist on request with the customers Day-2 operations via SAP support incidents management.  
+> - With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.   
+> - That includes kubernetes versions updates, security patches, overall monitoring of the underlying infrastructure, etc.  
+> - Customers can decide themselves to upsize or downsize the kubernetes cluster resources via a change of machine types.
+> - All SAP Kyma kubernetes extensions - the kyma modules are fully managed and supported as well.
+> - Customer have a choice between the fast and the regular channels with regard to the modules.  
+> - The fast channel offer a 14-day trial window before the regular channel modules get promoted.  
+> - SAP L1 /L2 /L3 support teams are there to assist on request with the customers Day-2 operations via SAP support incidents management.  
 >
-> With this, the customer Day-2 operations teams can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
+> - With this, the customers Day-2 operations teams can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
 
 
 ## Exercise 1.1 - Easy access to your teched landscape with SSO.
