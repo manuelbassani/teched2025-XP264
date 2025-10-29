@@ -53,13 +53,14 @@ graph TD
 
 
 > [!IMPORTANT]
-> With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.  
-> That includes kubernetes versions updates, security patches, overall monitoring etc
-> All the SAP Kyma kubernetes extensions - kyma modules are managed and supported as well.
-> Moreover, customer have a choice of fast and regular channels with regard to the modules.
-> SAP L1 /L2 /L3 support teams are there to help with the Day-2 operations on request via SAP support incident management.
+> With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.   
+> That includes kubernetes versions updates, security patches, overall monitoring of the underlying infrastructure, etc.  
+> All SAP Kyma kubernetes extensions - the kyma modules are fully managed and supported as well.
+> Customer have a choice between the fast and the regular channels with regard to the modules.  
+> The fast channel offer a 14-day window to try out things before the regular channel module gets promoted.  
+> SAP L1 /L2 /L3 support teams are there to assist on request with the customers Day-2 operations via SAP support incidents management.  
 >
-> With this, the customer Day-2 operations can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
+> With this, the customer Day-2 operations teams can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
 
 
 ## Exercise 1.1 - Easy access to your teched landscape with SSO.
