@@ -23,10 +23,10 @@ config:
   look: classic
 ---
 graph TD
-    A[Application Deployed - Day 2 Starts] --> B(Monitor Performance & Health);
+    A[Application Deployed - Day-2 Operations begin] --> B(Monitor Performance & Health);
     B --> C{Issue Detected?};
     C -- No --> D(Maintain & Optimize);
-    C -- Yes --> E(Alert On-Call SRE Team/);
+    C -- Yes --> E(Alert On-Call SRE Team / Raise SAP Support incident);
     E --> F(Diagnose & Investigate Incident);
     F --> G{Root Cause Identified?};
     G -- No --> F;
@@ -45,9 +45,6 @@ graph TD
     P --> B;
 ```
 
-With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.  
-With this, the customer Day-2 operations can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
-
 </div>
 </td>
 </tr>
@@ -55,6 +52,14 @@ With this, the customer Day-2 operations can focus on Management, Maintenance, M
 </table> 
 
 
+> [!IMPORTANT]
+> With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.  
+> That includes kubernetes versions updates, security patches, overall monitoring etc
+> All the SAP Kyma kubernetes extensions - kyma modules are managed and supported as well.
+> Moreover, customer have a choice of fast and regular channels with regard to the modules.
+> SAP L1 /L2 /L3 support teams are there to help with the Day-2 operations on request via SAP support incident management.
+>
+> With this, the customer Day-2 operations can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
 
 
 ## Exercise 1.1 - Easy access to your teched landscape with SSO.
