@@ -70,54 +70,6 @@ flowchart TD
 </table> 
 
 
-The Kubernetes landscape lifecycle is composed of the following stages:
-- Day-0 -- Planning and Design
-- Day-1 -- Configuration and Deployment
-- Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
-
-```mermaid
----
-config:
-  theme: redux
-  look: classic
----
-graph TD
-    A[Application Deployed - Day 2 Starts] --> B(Monitor Performance & Health);
-    B --> C{Issue Detected?};
-    C -- No --> D(Maintain & Optimize);
-    C -- Yes --> E(Alert On-Call Team);
-    E --> F(Diagnose & Investigate Incident);
-    F --> G{Root Cause Identified?};
-    G -- No --> F;
-    G -- Yes --> H(Formulate Fix);
-    H --> I(Deploy Hotfix or Configuration Change);
-    I --> B;
-    D --> J(Gather Metrics & Logs);
-    D --> K(Perform Routine Maintenance);
-    K --> L{Maintenance Complete?};
-    L -- Yes --> D;
-    J --> M(Analyze Data);
-    M --> N{Optimization Opportunities?};
-    N -- Yes --> O(Implement Improvements);
-    N -- No --> D;
-    O --> P(Deploy New Release);
-    P --> B;
-    subgraph Routine Tasks
-        direction LR
-        K[Perform Routine Maintenance]
-        K --> Q[Backups & Restores]
-        K --> R[Security Patches & Updates]
-    end
-    subgraph FinOps
-        direction LR
-        S[Monitor Cloud Spend] --> T{Cost Optimized?};
-        T -- No --> U[Adjust Resources];
-        T -- Yes --> S;
-    end
-
-```
-
-
 ### During the session you will learn...
 
   * how to operate applications with SAP BTP, Kyma runtime and discover the power of smooth integration with cloud applications and on-premise systems using the advanced connectivity features.  
