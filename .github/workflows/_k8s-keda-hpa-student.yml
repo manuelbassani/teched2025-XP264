@@ -309,11 +309,11 @@ env:
         kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
-    - "name": "Increase the load"
-      "run": |
-        kubectl delete pod/load-generator -n $NAMESPACE --ignore-not-found
-        kubectl wait --for=delete pod/load-generator  --timeout=60s
-        kubectl run  -n $NAMESPACE  load-generator --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv.xp264-050.svc.cluster.local/metrics; done"
+#    - "name": "Increase the load"
+#      "run": |
+#        kubectl delete pod/load-generator -n $NAMESPACE --ignore-not-found
+#        kubectl wait --for=delete pod/load-generator  --timeout=60s
+#        kubectl run  -n $NAMESPACE  load-generator --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv.xp264-050.svc.cluster.local/metrics; done"
 
 
     - "name": "scale back to a single replica."
