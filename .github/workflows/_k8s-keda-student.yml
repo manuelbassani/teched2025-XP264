@@ -108,11 +108,30 @@ env:
         kubectl get hpa -n $NAMESPACE || true
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
-    - "name": "scale-out the faas-srv function to min 3 replicas"
+    - "name": "scale-out the faas-srv function to min 5 replicas"
       "run": |
-        echo -e "kubectl autoscale function faas-srv in the namespace: $NAMESPACE..."
+        echo -e "keda autoscale function faas-srv in the namespace: $NAMESPACE..."
         
-        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=5 --max=10 || true        
+        cat <<EOF | kubectl apply -f
+        apiVersion: keda.sh/v1alpha1
+        kind: ScaledObject
+        metadata:
+         name: faas-srv
+         namespace: xp264-050
+        spec:
+         scaleTargetRef:
+           apiVersion:    serverless.kyma-project.io/v1alpha2
+           kind:          Function
+           name:          faas-srv
+         minReplicaCount:  5
+         maxReplicaCount:  10
+         triggers:
+         - type: cpu
+           metricType: Utilization
+           metadata:
+             value: "50"
+        EOF
+
         kubectl get hpa faas-srv -n $NAMESPACE || true
         
         echo "Wait until HPA is ready"
@@ -133,23 +152,23 @@ env:
 #        kubectl run  -n $NAMESPACE  load-generator --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv.xp264-050.svc.cluster.local/metrics; done"
 
 
-    - "name": "scale back to a single replica."
-      "run": |
-        echo "delete hpa"   
-        kubectl delete hpa faas-srv -n $NAMESPACE || true
-        echo "scale back to a single replica"  
-        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=1 --max=1 || true        
-        kubectl get hpa faas-srv -n $NAMESPACE || true
-        echo "Wait until HPA is ready"
-        kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s     
-        kubectl get hpa faas-srv -n $NAMESPACE || true
-        kubectl get pod -n $NAMESPACE  
+#    - "name": "scale back to a single replica."
+      # "run": |
+      #   echo "delete hpa"   
+      #   kubectl delete hpa faas-srv -n $NAMESPACE || true
+      #   echo "scale back to a single replica"  
+      #   kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=1 --max=1 || true        
+      #   kubectl get hpa faas-srv -n $NAMESPACE || true
+      #   echo "Wait until HPA is ready"
+      #   kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s     
+      #   kubectl get hpa faas-srv -n $NAMESPACE || true
+      #   kubectl get pod -n $NAMESPACE  
 
-        echo "get rid of hpa"   
-        kubectl delete hpa faas-srv -n $NAMESPACE || true
-        kubectl get hpa faas-srv -n $NAMESPACE || true
-        echo "display all pods in the namespace: $NAMESPACE..."
-        kubectl get pod -n $NAMESPACE        
+      #   echo "get rid of hpa"   
+      #   kubectl delete hpa faas-srv -n $NAMESPACE || true
+      #   kubectl get hpa faas-srv -n $NAMESPACE || true
+      #   echo "display all pods in the namespace: $NAMESPACE..."
+      #   kubectl get pod -n $NAMESPACE        
 
     # GitHub Action reference: https://github.com/jupyterhub/action-k8s-namespace-report
 #    - name: Kubernetes namespace report
