@@ -1,4 +1,4 @@
-name: k8s-keda-hpa-student
+name: k8s-keda-student
 on:
   workflow_dispatch:
     inputs:
