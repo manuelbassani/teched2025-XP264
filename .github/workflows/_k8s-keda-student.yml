@@ -152,14 +152,16 @@ env:
         echo -e "\nwait for function scale out and deployment rollout complete\n"
         kubectl get function faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[1]}" | jq
         kubectl wait --for=jsonpath="{.status.conditions[1].status}"=True function faas-srv -n $NAMESPACE --timeout=180s
+        echo "show KEDA-HPA"
+        kubectl get hpa keda-hpa-faas-srv -n $NAMESPACE || true
 
         echo "enumerate all the resource in the namespace - it may take quite some time to run"
         kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -l app=faas-srv -n $NAMESPACE
 
-        echo -e "show KEDA ScaleObject\n"
+        echo -e "\nshow KEDA ScaleObject\n"
         kubectl get scaledobject faas-srv -n $NAMESPACE || true
 
-        echo "show KEDA-HPA"
+        echo -e "\nshow KEDA-HPA"
         kubectl get hpa keda-hpa-faas-srv -n $NAMESPACE || true
 
     - "name": "scale back to a single replica."
