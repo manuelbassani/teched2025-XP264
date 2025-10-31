@@ -158,14 +158,16 @@ env:
 #      "run": |
 #        kubectl delete pod/load-generator -n $NAMESPACE --ignore-not-found
 #        kubectl wait --for=delete pod/load-generator  --timeout=60s
-#        kubectl run  -n $NAMESPACE  load-generator --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv.xp264-050.svc.cluster.local/metrics; done"
+#        kubectl run  -n $NAMESPACE -i load-generator -rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv.xp264-050.svc.cluster.local/metrics; done"
 
 
     - "name": "scale back to a single replica."
       "run": |
+        kubectl delete scaledobject faas-srv -n $NAMESPACE || true
+        kubectl wait --for=delete scaledobject/faas-srv --timeout=90s
         echo -e "KEAD CPU Trigger scale-down of function faas-srv in the namespace: $NAMESPACE..."
         
-        cat <<EOF | kubectl edit -f -
+        cat <<EOF | kubectl apply -f -
         apiVersion: keda.sh/v1alpha1
         kind: ScaledObject
         metadata:
@@ -192,6 +194,12 @@ env:
         kubectl wait --for=jsonpath="{.status.conditions[0].status}"=True scaledobject faas-srv -n $NAMESPACE --timeout=90s
         echo -e "show KEDA ScaleObject\n"
         kubectl get scaledobject faas-srv -n $NAMESPACE || true  
+
+        echo -e "\nwait for function scale out and deployment rollout complete\n"
+        kubectl get function faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[1]}" | jq
+        kubectl wait --for=jsonpath="{.status.conditions[1].status}"=True function faas-srv -n $NAMESPACE --timeout=90s
+
+
 
     # GitHub Action reference: https://github.com/jupyterhub/action-k8s-namespace-report
 #    - name: Kubernetes namespace report
