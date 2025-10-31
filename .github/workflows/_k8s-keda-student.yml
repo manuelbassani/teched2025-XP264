@@ -155,7 +155,7 @@ env:
         echo "show KEDA-HPA"
         kubectl get hpa keda-hpa-faas-srv -n $NAMESPACE || true
 
-        echo "enumerate all the resource in the namespace - it may take quite some time to run"
+        echo "enumerate all the resource in the namespace - this may take quite some time to run..."
         kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -l app=faas-srv -n $NAMESPACE
 
         echo -e "\nshow KEDA ScaleObject\n"
