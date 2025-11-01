@@ -1,12 +1,6 @@
 # Exercise 1 - First things first. Day-2 with SAP BTP, Kyma Runtime
 
-Day 2 Operations refers to the ongoing operational activities required to maintain, monitor, and optimize systems after the initial deployment (Day 1).   
-
-Summary of the routines or days:  
-
-- Day-0 -- Planning and Design
-- Day-1 -- Configuration and Deployment
-- Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
+Day 2 Operations refers to the ongoing operational activities required to maintain, monitor, and optimize systems after the initial deployment (Day 1 - Configuration and Deployment).   
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -14,127 +8,13 @@ Summary of the routines or days:
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div> 
-Day-2 Operations: Management, Maintenance, Monitoring, and Optimization
+Summary of the routines or days:  
 
+- Day-0 -- Planning and Design
+- Day-1 -- Configuration and Deployment
+- Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
 
-```mermaid
----
-config:
-  theme: redux
-  look: classic
----  
-graph TD
-    A[Day 2 Operations] --> B[Monitoring & Observability]
-    A --> C[Security & Compliance]
-    A --> D[Performance Optimization]
-    A --> E[Backup & Disaster Recovery]
-    A --> F[Scaling & Capacity Planning]
-    A --> G[Maintenance & Updates]
-    A --> H[Incident Response]
-    A --> I[Cost Optimization]
-
-    B --> B1[Application Monitoring]
-    B --> B2[Infrastructure Monitoring]
-    B --> B3[Log Management]
-    B --> B4[Metrics & Alerting]
-    B --> B5[Distributed Tracing]
-
-    C --> C1[Security Patches]
-    C --> C2[Vulnerability Scanning]
-    C --> C3[Compliance Auditing]
-    C --> C4[Access Control]
-    C --> C5[Security Incidents]
-
-    D --> D1[Resource Optimization]
-    D --> D2[Query Tuning]
-    D --> D3[Caching Strategies]
-    D --> D4[Load Balancing]
-    D --> D5[Performance Testing]
-
-    E --> E1[Regular Backups]
-    E --> E2[Backup Verification]
-    E --> E3[DR Testing]
-    E --> E4[RTO/RPO Planning]
-    E --> E5[Data Retention]
-
-    F --> F1[Auto-scaling]
-    F --> F2[Capacity Forecasting]
-    F --> F3[Resource Provisioning]
-    F --> F4[Performance Benchmarks]
-    F --> F5[Growth Planning]
-
-    G --> G1[Software Updates]
-    G --> G2[Configuration Management]
-    G --> G3[Database Maintenance]
-    G --> G4[Certificate Renewal]
-    G --> G5[Dependency Updates]
-
-    H --> H1[Alert Management]
-    H --> H2[Incident Escalation]
-    H --> H3[Root Cause Analysis]
-    H --> H4[Post-mortem Reviews]
-    H --> H5[Process Improvement]
-
-    I --> I1[Resource Optimization]
-    I --> I2[Usage Analysis]
-    I --> I3[Cost Monitoring]
-    I --> I4[Budget Planning]
-    I --> I5[Waste Elimination]
-
-    %% Feedback loops
-    B4 --> H1
-    H5 --> B4
-    D1 --> I1
-    F2 --> I2
-    C2 --> C1
-    E3 --> E4
-
-    %% Styling
-    classDef mainNode fill:#e1f5fe,stroke:#01579b,stroke-width:3px
-    classDef categoryNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef activityNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:1px
-
-    class A mainNode
-    class B,C,D,E,F,G,H,I categoryNode
-    class B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5,F1,F2,F3,F4,F5,G1,G2,G3,G4,G5,H1,H2,H3,H4,H5,I1,I2,I3,I4,I5 activityNode
-```
-</div> 
-<div>   
-
-```mermaid
----
-config:
-  theme: redux
-  look: classic
----
-gantt
-    title Day 2 Operations Timeline
-    dateFormat  HH:mm
-    axisFormat %H:%M
-    
-    section Monitoring
-    Continuous Monitoring    :active, monitor, 00:00, 24:00
-    Alert Processing         :alert, 00:00, 24:00
-    
-    section Daily Tasks
-    Security Patches         :patch, 02:00, 04:00
-    Backup Verification      :backup, 03:00, 05:00
-    Performance Review       :perf, 08:00, 10:00
-    Cost Analysis           :cost, 14:00, 16:00
-    
-    section Weekly Tasks
-    Capacity Planning       :capacity, 09:00, 12:00
-    DR Testing             :dr, 10:00, 14:00
-    Security Audit         :audit, 13:00, 17:00
-    
-    section Monthly Tasks
-    Post-mortem Reviews    :review, 09:00, 11:00
-    Process Optimization   :optimize, 11:00, 15:00
-    Compliance Check       :compliance, 15:00, 17:00
-```
-</div>
-
-<div>
+The below charts provide different perspectives on Day 2 operations - from process flow to timeline-based activities.
 
 
 ```mermaid
@@ -179,6 +59,45 @@ flowchart LR
     class Monitor,Incident,Analyze,Fix,Test,Deploy,Optimize,Provision,Update,Maintain,Security,Backup,Cost,Improve process
     class Alert,Scale decision
 ```
+
+
+``
+</div>
+
+- Timeline-based activities.
+<div>
+
+```mermaid
+---
+config:
+  theme: redux
+  look: classic
+---
+gantt
+    title Day 2 Operations Timeline
+    dateFormat  HH:mm
+    axisFormat %H:%M
+    
+    section Monitoring
+    Continuous Monitoring    :active, monitor, 00:00, 24:00
+    Alert Processing         :alert, 00:00, 24:00
+    
+    section Daily Tasks
+    Security Patches         :patch, 02:00, 04:00
+    Backup Verification      :backup, 03:00, 05:00
+    Performance Review       :perf, 08:00, 10:00
+    Cost Analysis           :cost, 14:00, 16:00
+    
+    section Weekly Tasks
+    Capacity Planning       :capacity, 09:00, 12:00
+    DR Testing             :dr, 10:00, 14:00
+    Security Audit         :audit, 13:00, 17:00
+    
+    section Monthly Tasks
+    Post-mortem Reviews    :review, 09:00, 11:00
+    Process Optimization   :optimize, 11:00, 15:00
+    Compliance Check       :compliance, 15:00, 17:00
+`
 
 
 </div>
