@@ -670,6 +670,64 @@ sequenceDiagram
     Note over T,DB: Tenant can now access the application
 ```
 
+```mermaid
+graph TD
+    subgraph "Application Layer"
+        APP[Multitenant Application]
+        AUTH[Authentication Layer]
+        TENANT[Tenant Context Manager]
+    end
+    
+    subgraph "Data Layer Isolation"
+        subgraph "Schema-based Isolation"
+            DB[(Database)]
+            T1S[Tenant 1 Schema]
+            T2S[Tenant 2 Schema]
+            T3S[Tenant 3 Schema]
+        end
+        
+        subgraph "Container-based Isolation"
+            HDI[HDI Container Service]
+            T1C[Tenant 1 Container]
+            T2C[Tenant 2 Container]
+            T3C[Tenant 3 Container]
+        end
+    end
+    
+    subgraph "Service Layer"
+        DEST[Destination Service]
+        CONN[Connectivity Service]
+        XSUAA2[XSUAA Service]
+    end
+    
+    APP --> AUTH
+    AUTH --> TENANT
+    TENANT --> DB
+    TENANT --> HDI
+    
+    DB --> T1S
+    DB --> T2S
+    DB --> T3S
+    
+    HDI --> T1C
+    HDI --> T2C
+    HDI --> T3C
+    
+    APP --> DEST
+    APP --> CONN
+    AUTH --> XSUAA2
+    
+    %% Styling
+    classDef app fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef data fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef tenant fill:#fff8e1,stroke:#ef6c00,stroke-width:2px
+    
+    class APP,AUTH,TENANT app
+    class DB,HDI data
+    class DEST,CONN,XSUAA2 service
+    class T1S,T2S,T3S,T1C,T2C,T3C tenant
+```
 
 ```mermaid
 graph TD
