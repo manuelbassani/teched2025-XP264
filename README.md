@@ -161,7 +161,7 @@ https://url.sap/h4ioc0), in the Chrome browser on the **provided** teched laptop
 * #### [Exercise 4 - Explore SAP BTP Connectivity Capabilities in Kyma](exercises/ex4#exercise-4---explore-sap-btp-connectivity-capabilities-in-kyma)
 
   * [Exercise 4.1 - Overview of the Kyma Modules](exercises/ex4#exercise-41---overview-of-the-kyma-modules)
-  * [Exercise 4.2 - Explore the modules related to technical connectivity](exercises/ex4#exercise-42---explore-the-modules-related-to-technical-connectivity)
+  * [Exercise 4.2 - Explore the SAP BTP Connectivity modules](exercises/ex4#exercise-42---explore-the-sap-btp-connectivity-modules)
   * [Exercise 4.3 - Explore Day-2 Relevant Operations](exercises/ex4#exercise-43---explore-day-2-relevant-operations)
 
 * #### [Exercise 5 - Configure Transparent Proxy Kyma Module](exercises/ex5#exercise-5---configure-transparent-proxy-kyma-module)

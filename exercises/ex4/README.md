@@ -32,19 +32,24 @@ Once navigated in the Kyma Modules overview, click on Edit button.
 > [!NOTE]
 > By default, all modules come as **_Managed_**. This means that their operational health is backed by an operator and in case of any issue, respective Service Reliability Enginering team in SAP will be alerted and as result you get faster problem resolution.
 
-## Exercise 4.2 - Explore the modules related to technical connectivity
+## Exercise 4.2 - Explore the SAP BTP Connectivity modules
 
-Technical connectivity is generally categorized as:
-- _Inbound_ - External request or data is entering the application environment
-- _Local_ - Local workloads are exchanging data
-- _Outbound_ - Local workloads are performing requests or sending data towards remotely hosted worloads
+Technical connectivity can be generally categorized as:
+- _Inbound_ - External request or data is entering the application environment. An example of a Kyma Module in this category is [API Gateway](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/f323ab16595a47779bc74344969c0133.html).
+- _Local_ - Local workloads are exchanging data. An example of a Kyma Module in this category is [Istio](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/26ffe00c24574db58697992b93f397ac.html?locale=en-US&version=LATEST).
+- _Outbound_ - Local workloads are performing requests or sending data towards remotely hosted worloads.
 
-To read more about each of the modules, you can refer to the respective documentation link:
+This exercise focuses on the following two modules. To read more about each of the modules, you can refer to the respective documentation link:
 <br>![](/exercises/ex4/images/kyma-modules-btp-connectivity.jpg)
-<br/><br/>
 - [**Connectivity Proxy**](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/8dd1690aa475477ab44624626f45524b.html) - _Outbound_. An integral part of [SAP BTP Connectivity capabilities](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html), and more specifically the [Connectivity service](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/bd2d4f45e0494121a058ad9c015ba348.html). Enable workloads to establish technical connectivity towards systems hosted in the customer premise or virtual private cloud environments, securely exposed via [Cloud Connector](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e6c7616abb5710148cfcf3e75d96d596.html).
 <br/><br/>
 - [**Transparent Proxy**](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/1700cfe070704d2e80aa76de1033a6c4.html) - _Outbound_. An integral part of [SAP BTP Connectivity capabilities](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html). Enables workloads to establish **_unified, virtually transparent_** technical connectivity to any remote system - hosted either in public or private networks. It works seamlessly with other modules like **Istio** and **Connectivity Proxy** module. The relevant target system-specific technical connectivity configurations are managed centrally as **_destinations_** in [Destination service](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/8ff5483fef564eae9f34fe092d1bddcd.html).
+
+This solution diagram shows the big picture through the blend of [SAP BTP Connectivity](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html) in the context of Kyma environment:
+<br>![](/exercises/ex4/images/sap-btp-connectivity-kyma.jpg)
+
+> [!NOTE]
+> As you can see, each of the components serves **a dedicated purpose** and **adds to the value of the other**, and **all together** ultimately generate even **greater value**.
 
 ## Exercise 4.3 - Explore Day-2 Relevant Operations
 
