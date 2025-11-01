@@ -63,6 +63,7 @@ flowchart LR
 </div>
 
 - Timeline-based activities.
+
 <div>
 
 ```mermaid
@@ -81,7 +82,7 @@ gantt
     Alert Processing         :alert, 00:00, 24:00
     
     section Daily Tasks
-    Security Patches         :patch, 02:00, 04:00
+    Security Patches (SAP SRE)         :patch, 02:00, 04:00
     Backup Verification      :backup, 03:00, 05:00
     Performance Review       :perf, 08:00, 10:00
     Cost Analysis           :cost, 14:00, 16:00
@@ -95,7 +96,7 @@ gantt
     Post-mortem Reviews    :review, 09:00, 11:00
     Process Optimization   :optimize, 11:00, 15:00
     Compliance Check       :compliance, 15:00, 17:00
-`
+```
 
 
 </div>
