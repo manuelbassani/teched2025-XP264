@@ -377,7 +377,6 @@ env:
         -var BTP_GLOBAL_ACCOUNT=${{steps.cluster_info.outputs.GLOBALACCOUNT}} \
         -var BTP_CUSTOM_IDP=${{ env.IDP }} \
         -var BTP_SUBACCOUNT=${{ github.event.inputs.subaccount_name }} \
-        -var POSTGRES_ALLOW_ACCESS=${{ vars.POSTGRES_ALLOW_ACCESS }} \
         -auto-approve -no-color
 
       env:

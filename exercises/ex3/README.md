@@ -4,26 +4,22 @@
 
 Lets make some HTTP requests to the Httpbin application previously deployed in the Kyma runtime.
 
-- Run the student workflow from the table below:
+- 👉 Open the Student Workflow (namespaced) from the table below. It will make 10 requests to the Httpbin application.  
+- 👉 In order to simulate more load, edit the request count to for instance 100 (one hundred)  
+- 👉 Once completed, navigate to SAP Cloud Logging to explore the three pillars of Kyma Telemetry: Logs, Metrics and Traces.  
 
-
-< [!TIP]
-< 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
+> [!TIP]
+> 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
 | Kyma BTP Region (Cockpit) |  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
  | :---------  | --------- | :--------- | :------- | -----------
- | [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="75" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ | [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="50" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ | [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="50" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ | [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="50" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ | [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="50" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ | [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="50" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
 
 
-
-- 👉 Open the Student Workflow (namespaced). It will make 10 requests to the Httpbin application.
-- 👉 You can change the request count if you would like to simulate more load.
-
-- 👉 Once completed, you shall navigate to SAP Cloud Logging to explore the three pillars of Kyma Telemetry: Logs, Metrics and Traces.
 
 ## Exercise 3.1 - Access SAP Cloud Logging
 
@@ -212,10 +208,162 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 </tbody>
 </table>
 
-  >Note: Some Trace spans may be jumbled up
+> [!NOTE]
+> Some Trace spans may be jumbled up
 
 - Feel free to explore further
 
-## Summary
+```mermaid
+graph TB
+    subgraph "Log Sources"
+        subgraph "SAP BTP Applications"
+            CF_APP[Cloud Foundry Apps]
+            KYMA_APP[Kyma Runtime Apps]
+            NEO_APP[Neo Environment Apps]
+        end
+        
+        subgraph "SAP Systems"
+            S4HANA[SAP S/4HANA]
+            ECC[SAP ECC]
+            BW[SAP BW]
+        end
+        
+        subgraph "Custom Applications"
+            CUSTOM_APP[Custom Apps]
+            MICROSERVICE[Microservices]
+        end
+    end
+
+    subgraph "SAP Cloud Logging Service"
+        subgraph "Ingestion Layer"
+            FLUENTD[Fluentd Agent]
+            RSYSLOG[Rsyslog Forwarder]
+            HTTP_API[HTTP Ingestion API]
+            OTLP[OpenTelemetry Collector]
+        end
+
+        subgraph "Processing Layer"
+            PARSER[Log Parser]
+            ENRICHER[Log Enricher]
+            FILTER[Filter & Transform]
+            BUFFER[Buffer Queue]
+        end
+
+        subgraph "Storage Layer"
+            OPENSEARCH[OpenSearch Cluster]
+            subgraph "Indices"
+                HOT_INDEX[Hot Index<br/>Recent Logs]
+                WARM_INDEX[Warm Index<br/>7-30 days]
+                COLD_INDEX[Cold Index<br/>30+ days]
+            end
+            S3_BACKUP[Object Storage<br/>Long-term Archive]
+        end
+
+        subgraph "Query & Analysis Layer"
+            OPENSEARCH_API[OpenSearch API]
+            QUERY_ENGINE[Query Engine]
+            AGGREGATION[Aggregation Engine]
+        end
+
+        subgraph "Visualization & Access"
+            OPENSEARCH_DASH[OpenSearch Dashboards]
+            KIBANA[Kibana Interface]
+            REST_API[REST API]
+            CLI[CLI Tools]
+        end
+
+        subgraph "Management & Monitoring"
+            RETENTION[Retention Policy Mgmt]
+            INDEX_MGMT[Index Lifecycle Mgmt]
+            ALERTING[Alerting Engine]
+            METRICS[Service Metrics]
+        end
+    end
+
+    subgraph "Integration & Consumption"
+        SAP_AMS[SAP AMS]
+        THIRD_PARTY[Third-party SIEM]
+        ANALYTICS[Analytics Tools]
+        MONITORING[Monitoring Systems]
+    end
+
+    subgraph "Security & Compliance"
+        IAM[Identity & Access Mgmt]
+        ENCRYPT[Encryption at Rest/Transit]
+        AUDIT[Audit Logging]
+        COMPLIANCE[Compliance Controls]
+    end
+
+    %% Log Source to Ingestion
+    CF_APP -->|Logs| FLUENTD
+    KYMA_APP -->|Logs| FLUENTD
+    NEO_APP -->|Logs| RSYSLOG
+    S4HANA -->|Syslog| RSYSLOG
+    ECC -->|Syslog| RSYSLOG
+    BW -->|Syslog| RSYSLOG
+    CUSTOM_APP -->|HTTP/JSON| HTTP_API
+    MICROSERVICE -->|OTLP| OTLP
+
+    %% Ingestion to Processing
+    FLUENTD --> PARSER
+    RSYSLOG --> PARSER
+    HTTP_API --> PARSER
+    OTLP --> PARSER
+
+    %% Processing Flow
+    PARSER --> ENRICHER
+    ENRICHER --> FILTER
+    FILTER --> BUFFER
+
+    %% Storage Flow
+    BUFFER --> OPENSEARCH
+    OPENSEARCH --> HOT_INDEX
+    HOT_INDEX -->|Age-based| WARM_INDEX
+    WARM_INDEX -->|Age-based| COLD_INDEX
+    COLD_INDEX -->|Archive| S3_BACKUP
+
+    %% Query Flow
+    OPENSEARCH --> OPENSEARCH_API
+    OPENSEARCH_API --> QUERY_ENGINE
+    QUERY_ENGINE --> AGGREGATION
+
+    %% Visualization Access
+    AGGREGATION --> OPENSEARCH_DASH
+    AGGREGATION --> KIBANA
+    OPENSEARCH_API --> REST_API
+    REST_API --> CLI
+
+    %% Management
+    RETENTION --> INDEX_MGMT
+    INDEX_MGMT --> OPENSEARCH
+    ALERTING --> OPENSEARCH_API
+    METRICS -.->|Monitor| OPENSEARCH
+
+    %% External Integration
+    REST_API --> SAP_AMS
+    REST_API --> THIRD_PARTY
+    OPENSEARCH_API --> ANALYTICS
+    ALERTING --> MONITORING
+
+    %% Security Layer
+    IAM --> REST_API
+    IAM --> OPENSEARCH_DASH
+    IAM --> KIBANA
+    ENCRYPT -.->|Protects| OPENSEARCH
+    AUDIT -.->|Tracks| OPENSEARCH_API
+    COMPLIANCE -.->|Enforces| RETENTION
+
+    %% Styling
+    style OPENSEARCH fill:#005f9e
+    style HOT_INDEX fill:#ff9900
+    style WARM_INDEX fill:#ffd700
+    style COLD_INDEX fill:#87ceeb
+    style FLUENTD fill:#0e83c8
+    style OPENSEARCH_DASH fill:#005571
+    style ALERTING fill:#e74c3c
+    style ENCRYPT fill:#27ae60
+```
+
+## Next steps
 
 Continue to - [Exercise 4 - Explore SAP BTP Connectivity Capabilities in Kyma](../ex4/README.md)

@@ -164,6 +164,7 @@ They come in three different flavors, namely as:
 <td style="width: 71.6%; height: 193px;">
 <div>
 👉 Github automation workflows sequence diagrams. Let's have a look at the common building blocks (steps) of a github action workflow
+<hr>
 
 <p float="left">  
 
@@ -201,7 +202,7 @@ end
 
 ```
 <hr>
-👉 Let's have a look at the other steps of a github action workflow
+👉 Let's have a look at the custom steps of a github action workflow
 
 
 ```mermaid
@@ -212,7 +213,7 @@ config:
   look: classic
 ---
 flowchart TD
- subgraph other["other"]
+ subgraph other["custom"]
         G["admin"]
         F(("Other steps"))
         H["student"]
@@ -280,11 +281,11 @@ sequenceDiagram
 
 | Kyma BTP Region (Cockpit) |  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
 | :---------  | --------- | :--------- | :------- | -----------
-| [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="75" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+| [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="50" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+| [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="50" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+| [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="50" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+| [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="50" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+| [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="50" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
 
 
 </div>  
@@ -365,9 +366,6 @@ Explanation. What has happened?
 
 
 
-Principal excercise takeaways:
-- The automation workflows provide ease of use with the emphasis on both security and on lowering the cost of the run with the Day-2 operations
-- The Day-1 auto-generated automation workflows templates facilitate the Day-2 operations and allow for targeted extensions of the built-in flows.
 
 ## Exercise 1.3 - Zoom on Kyma CLI (optional)
 
@@ -413,135 +411,119 @@ In a nutshell, Kyma CLI extends the capabilities of the ubiquitous kubectl CLI a
 > Use "kyma [command] --help" for more information about a command.
 > ~~~
 
+Practice:
 
-- 👉 Please get familiar with the other *kyma cli* [commands](https://github.com/kyma-project/cli/tree/3.2.0/docs/user/gen-docs)... 
+> [!NOTE]
+> - 👉 Let's leverage the kyma cli to get simple metadata from a kyma cluster...  
+> - 👉 run `kyma alpha diagnose -f json | jq '.metadata'`
+>
+> ~~~rust
+> {
+>  "globalAccountID": "4c526f8b-cca9-4837-8b43-87824e3a4d10",
+>  "subaccountID": "5524c764-8893-4530-8eb8-feb9e6110f16",
+> ............
+> }
+> ~~~
+> - 👉 run and explore `kyma alpha diagnose -f json | jq '.nodes[] | tojson'`
+
+> [!TIP]
+>  * Let's use the above information to build the deep link to the BTP subaccount with the kyma runtime environment.  
+>  * Use the link to inspect the BTP side of the kyma house....
+>  * Goto the [landscape dashboard](https://url.sap/3kf0ol) and choose the right environment...
+>  * Scramble the kyma runtime environment with the BTP Provisioning Service REST APIs
+
+
+- 👉 Last but not least, get familiar with the other *kyma cli* [commands](https://github.com/kyma-project/cli/tree/3.2.0/docs/user/gen-docs)... 
 
 ## Exercise 1.4 - Fire-fighter access to your kyma cluster
 
-There are two ways to gain access to a kyma cluster in XP264 session landscape, namely:
+As usual, in case of fire, one needs well designated escape routes!  
+
+There are mutliple ways to gain access to a kyma cluster in XP264 session landscape, namely:
+- from a kyma dashboard (console)
 - from a terminal window using the downloaded user OIDC kubeconfig with either `kubectl` and/or `kyma CLI`
-- from within a github action diagnostic workflow with the embeded terraform automation (the preferred way)
+- from within a github action diagnostic workflow that comprises the embeded terraform automation (the preferred way)
 
 
-
-The first method requires a kubectl oidc plugin (already pre-installed on the laptops) and cannot be performed in a headless context, for instance from a CI/CD pipeline or workflow.  
-
-You can initially download the kubeconfig from one of the links below or directly from any SAP Kyma dashboard.  
-
-* Here goes the table with the links to all btp and k8s resources...  
+The first two methods require a kubectl oidc plugin and cannot be performed in a headless context, for instance in a CI/CD pipeline or workflow.  
 
 > [!NOTE]
+>
+> * For convenience, here goes the table with the links to all btp and k8s resources...  
+> * You can initially download the kubeconfig from one of the links below or directly from any SAP Kyma dashboard.  
+>
 > | Region (BTP Cockpit) | Kubeconfig (download) | Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced) | Data Collection Workflow (cluster-wide)
 > | :--------- | :---------:  | --------- | :--------- | :------- | -----------
-> | [uk-south](https://url.sap/0dd8pm) | https://url.sap/q9176k | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
-> | [japan-east](https://url.sap/u66itn) | https://url.sap/0nusi8 | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
-> | [us-east](https://url.sap/b24wtp) | https://url.sap/57qy47 | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="75" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
-> | [xp264-000](https://url.sap/v2dn5g) | https://url.sap/jdleyl | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
-> | [uk-xp264](https://url.sap/ovbfn6) |https://url.sap/tyapw7 | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
+> | [uk-south](https://url.sap/0dd8pm) | https://url.sap/q9176k | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="50" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
+> | [japan-east](https://url.sap/u66itn) | https://url.sap/0nusi8 | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="50" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
+> | [us-east](https://url.sap/b24wtp) | https://url.sap/57qy47 | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="50" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
+> | [xp264-000](https://url.sap/v2dn5g) | https://url.sap/jdleyl | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="50" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
+> | [uk-xp264](https://url.sap/ovbfn6) |https://url.sap/tyapw7 | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="50" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
 
-Good to know:  
-- Relying on a user-OIDC kubeconfig is not very convenient due to the periodic redirects that may cause timeouts, even in a terminal window.
+> [!TIP]
+> 
+> - Relying on a user-OIDC kubeconfig is not very convenient due to the periodic redirects that may cause timeouts, even if used in a terminal window.
 
 Practice:
 - 👉 Create a permenent or temporary service account based kubeconfig (with uk-south)
 - 👉 Choose the uk-south tile or click on the provided deep link
 
 ```
-kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml
 ```
 or
 
 ```
-kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --time 1h  --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --time 1h  --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml
 ```
 
 
-```
-apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQUt3bWpnd1VwQTQ5Rkw2Mkp3Zm56Y2d3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBM2ovNzZqWjdXei9BQU9PT2pjUzZVUnRRY0tSellIckRlZlVGdVJXUEVxWkRXTmxBPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
-    server: https://api.a896778.kyma.ondemand.com
-  name: garden-kyma--a896778-external
-contexts:
-- context:
-    cluster: garden-kyma--a896778-external
-    namespace: default
-    user: kyma-cli-sa
-  name: garden-kyma--a896778-external
-current-context: garden-kyma--a896778-external
-kind: Config
-preferences: {}
-users:
-- name: kyma-cli-sa
-  user:
-    token: eyJhbGciOiJSUzI1NiIsImtpZCI6IlRvQlNSVXRhekVNQWpLaE11SF9Ga0lrUUlCTG5ZQUV3dk9wc3Z5czJZR2MifQ.***
-```
+> ~~~rust
+> apiVersion: v1
+> clusters:
+> - cluster:
+>    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQUt3bWpnd1VwQTQ5Rkw2Mkp3Zm56Y2d3R****lGSUNBVEUtLS0tLQo=
+>    server: https://api.<shoot>.kyma.ondemand.com
+>  name: garden-kyma--<shoot>-external
+> contexts:
+> - context:
+>    cluster: garden-kyma--<shoot>-external
+>    namespace: default
+>    user: kyma-cli-sa
+>  name: garden-kyma--<shoot>-external
+> current-context: garden-kyma--<shoot>-external
+> kind: Config
+> preferences: {}
+> users:
+> - name: kyma-cli-sa
+>  user:
+>    token: eyJhbGciOiJSUzI1NiIsImtpZCI6IlRvQlNSVXRhekVNQWpLaE11SF9Ga0lrUUlCTG5ZQUV3dk9wc3Z5czJZR2MifQ.***
+> ~~~
 
 
 ```
-kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml > ~/.kube/kubeconfig--a896778.yaml
+kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml > ~/.kube/kubeconfig--<shoot>.yaml
+```
 
-
-kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-000 --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+```
+kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-000 --permanent  --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml
 ```
 
   * read-only access in a given namespace
 
 ```
-kyma alpha kubeconfig generate --serviceaccount kyma-cli-view-sa  --namespace default --permanent --clusterrole view --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+kyma alpha kubeconfig generate --serviceaccount kyma-cli-view-sa  --namespace default --permanent --clusterrole view --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml
 ```
 
   * cluster-wide read-only access
 
 ```
-kyma alpha kubeconfig generate --serviceaccount kyma-cli-view-sa  --namespace default --permanent --clusterrole view --cluster-wide --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+kyma alpha kubeconfig generate --serviceaccount kyma-cli-view-sa  --namespace default --permanent --clusterrole view --cluster-wide --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml
 
 
-kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-000 --permanent --clusterrole view --cluster-wide --kubeconfig ~/.kube/kubeconfig--garden-kyma--a896778-external.yaml
+kyma alpha kubeconfig generate --serviceaccount xp264-000-sa  --namespace xp264-000 --permanent --clusterrole view --cluster-wide --kubeconfig ~/.kube/kubeconfig--garden-kyma--<shoot>-external.yaml
 ```  
 
-Let's leverage the kyma cli to get simple metadata from a kyma cluster
-
-👉 run `kyma alpha diagnose -f json | jq '.metadata'`
-```
-{
-  "globalAccountID": "4c526f8b-cca9-4837-8b43-87824e3a4d10",
-  "subaccountID": "5524c764-8893-4530-8eb8-feb9e6110f16",
-  "clusterID": "eef5b822-8f8f-4d08-af05-f26aafe252b8",
-  "clusterDomain": "a416537.stage.kyma.ondemand.com",
-  "region": "uksouth",
-  "shootName": "a416537",
-  "provider": "azure",
-  "kubernetesVersion": "1.33.3",
-  "natGatewayIPs": [
-    "172.167.242.76,",
-    "172.187.130.162,",
-    "172.187.211.228"
-  ],
-  "gardenerExtensions": [
-    "shoot-auditlog-service",
-    "shoot-cert-service",
-    "shoot-dns-service",
-    "shoot-lakom-service",
-    "shoot-networking-filter",
-    "shoot-networking-problemdetector",
-    "shoot-oidc-service"
-  ],
-  "kubeAPIServer": "https://api.a416537.stage.kyma.ondemand.com"
-}
-```
-
-  * Let's use the above information to build the deep link to the BTP subaccount with the kyma runtime environment.  
-  * Use the link to inspect the BTP side of the kyma house....
-  * Goto the [landscape dashboard](https://url.sap/3kf0ol) and choose the right environment...
-  * Scramble the kyma runtime environment with the BTP Provisioning Service REST APIs
-
-```
-kyma alpha diagnose -f json | jq '.nodes[] | tojson'
-
-"{\"machineInfo\":{\"name\":\"shoot--kyma-stage--a416537-cpu-worker-0-z1-69d94-hd29q\",\"architecture\":\"amd64\",\"kernelVersion\":\"6.12.47-cloud-amd64\",\"osImage\":\"Garden Linux 1877.4\",\"containerRuntime\":\"containerd://2.1.4\",\"kubeletVersion\":\"v1.33.3\",\"operatingSystem\":\"linux\"},\"capacity\":{\"cpu\":\"4\",\"memory\":\"16384092Ki\",\"eph
-```
 
 
 ## Exercise 1.5 - Terraforming kyma runtime environment
@@ -554,146 +536,7 @@ Accessing other diagnostic information with btp and kubernetes terraform provide
 > It could be, for instance, shared with the SAP Kyma support.
 
 
-- 👉 Let's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
 
-
-<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
-<tbody>
-<tr style="height: 193px;">
-<td style="width: 71.6%; height: 193px;">
-<div> 
-<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
-</div>
-</td>
-</tr>
-</tbody>
-</table> 
-
-
-- 👉 run: `export KUBE_CONFIG_PATH=~/Downloads/kubeconfig_sa/my-kubeconfig_sa.yaml`
-- 👉 run: `terraform workspace list`
-
-```
-│ Error: Backend initialization required, please run "terraform init"
-│ 
-│ Reason: Initial configuration of the requested backend "kubernetes"
-│ 
-│ The "backend" is the interface that Terraform uses to store state,
-│ perform operations, etc. If this message is showing up, it means that the
-│ Terraform configuration you're using is using a custom configuration for
-│ the Terraform backend.
-│ 
-│ Changes to backend configurations require reinitialization. This allows
-│ Terraform to set up the new configuration, copy existing state, etc. Please run
-│ "terraform init" with either the "-reconfigure" or "-migrate-state" flags to
-│ use the current configuration.
-│ 
-│ If the change reason above is incorrect, please verify your configuration
-│ hasn't changed and try again. At this point, no changes to your existing
-│ configuration or state have been made.
-╵
-```
-
-- 👉 run: `terraform init`
-
-```       
-Initializing the backend...
-
-Successfully configured the backend "kubernetes"! Terraform will automatically
-use this backend unless the backend configuration changes.
-Initializing modules...
-- k8s_context in modules/k8s
-Initializing provider plugins...
-- Finding latest version of massdriver-cloud/jq...
-- Finding salrashid123/http-full versions matching "1.3.1"...
-- Finding latest version of hashicorp/kubernetes...
-- Finding latest version of alekc/kubectl...
-- Finding latest version of hashicorp/local...
-- Finding latest version of hashicorp/http...
-- Finding latest version of jackivanov/qrcode...
-- Finding latest version of sap/btp...
-- Installing hashicorp/local v2.5.3...
-- Installed hashicorp/local v2.5.3 (signed by HashiCorp)
-- Installing hashicorp/http v3.5.0...
-- Installed hashicorp/http v3.5.0 (signed by HashiCorp)
-- Installing jackivanov/qrcode v1.0.0...
-- Installed jackivanov/qrcode v1.0.0 (self-signed, key ID 13FBA8C4DFF15EE4)
-- Installing sap/btp v1.17.0...
-- Installed sap/btp v1.17.0 (self-signed, key ID 270FEB6EE486FEBF)
-- Installing massdriver-cloud/jq v0.2.1...
-- Installed massdriver-cloud/jq v0.2.1 (self-signed, key ID 6758F1FC1D4FE114)
-- Installing salrashid123/http-full v1.3.1...
-- Installed salrashid123/http-full v1.3.1 (self-signed, key ID 97341836616BF511)
-- Installing hashicorp/kubernetes v2.38.0...
-- Installed hashicorp/kubernetes v2.38.0 (signed by HashiCorp)
-- Installing alekc/kubectl v2.1.3...
-- Installed alekc/kubectl v2.1.3 (self-signed, key ID 772FB27A86DAFCE7)
-Partner and community providers are signed by their developers.
-If you'd like to know more about provider signing, you can read about it here:
-https://www.terraform.io/docs/cli/plugins/signing.html
-Terraform has created a lock file .terraform.lock.hcl to record the provider
-selections it made above. Include this file in your version control repository
-so that Terraform can guarantee to make the same selections by default when
-you run "terraform init" in the future.
-
-Terraform has been successfully initialized!
-
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
-```
-
-- 👉 run: `terraform workspace list`
-```
-* default
-  k8s-context-xp264-050-c1f19148-71f7-4883-9f86-8d5ee7634dec
-  k8s-context-xp264-050-xp264-050
-```
-
-- 👉 run: `terraform workspace select k8s-context-xp264-050-xp264-050`
-`Switched to workspace "k8s-context-xp264-050-xp264-050".`
-
-
-- 👉 run: `terraform output -json  KymaModules | jq '.[] | { name: .name, version: .version}'`
-
-```
-{
-  "name": "serverless",
-  "version": "1.8.3"
-}
-{
-  "name": "connectivity-proxy",
-  "version": "1.1.2"
-}
-{
-  "name": "keda",
-  "version": "1.8.2"
-}
-{
-  "name": "transparent-proxy",
-  "version": "1.8.7"
-}
-{
-  "name": "telemetry",
-  "version": "1.49.0"
-}
-{
-  "name": "api-gateway",
-  "version": "3.2.3"
-}
-{
-  "name": "istio",
-  "version": "1.21.1"
-}
-{
-  "name": "btp-operator",
-  "version": "1.2.19"
-}
-```
 
 - 👉 Run the Data Collection Workflow
 
@@ -723,13 +566,9 @@ sequenceDiagram
 
 - 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
-| Kyma BTP Region (Cockpit) |  Kyma dashboard | Data Collection Workflow (namespaced)
- | :---------  | :--------- | :------- |
- | [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://url.sap/x2ygbf) | [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://url.sap/0ysrs1 ) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="75" />](https://url.sap/ui217f) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://url.sap/9waari ) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://url.sap/3wchu2 ) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ |  Data Collection Workflow (namespaced)
+ | :---------  |
+ | [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
 
 
 </div>  
@@ -737,6 +576,51 @@ sequenceDiagram
 </tr>
 </tbody>
 </table>  
+
+
+
+- 👉 Let's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div> 
+<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
+
+
+- 👉 run: `export KUBE_CONFIG_PATH=~/Downloads/kubeconfig_sa/my-kubeconfig_sa.yaml`
+- 👉 run: `terraform init`
+
+> ~~~rust       
+> Initializing the backend...
+>
+> Successfully configured the backend "kubernetes"! Terraform will automatically
+> use this backend unless the backend configuration changes.
+>
+>
+> Terraform has been successfully initialized!
+>
+> ~~~
+
+- 👉 run: `terraform workspace list`
+```
+* default
+  k8s-context-xp264-050-c1f19148-71f7-4883-9f86-8d5ee7634dec
+  k8s-context-xp264-050-xp264-050
+```
+
+- 👉 run: `terraform workspace select k8s-context-xp264-050-xp264-050`
+`Switched to workspace "k8s-context-xp264-050-xp264-050".`
+
+
+- 👉 run and explore: `terraform output -json  KymaModules | jq '.[] | { name: .name, version: .version}'`
 
 
 ## Exercise 1.6 - Subscribe to a kyma multitenant application
@@ -755,23 +639,75 @@ Here goes a diagram of the functional architecture of the solution
 
 
 ```mermaid
-graph TD
-    %% Define tenants and applications
-    subgraph "Application Layer"
-        TenantA_User[Tenant A Consumer]
-        TenantB_User[Tenant B Consumer]
-        API_Gateway[API Gateway / Routing]
+---
+title: Subscription Flow Chart
+---
+sequenceDiagram
+    participant T as Tenant Admin
+    participant BTP as SAP BTP Cockpit
+    participant SR as SaaS Registry
+    participant PA as Provider App
+    participant XSUAA as XSUAA Service
+    participant DB as Database
+    
+    T->>BTP: Access BTP Cockpit
+    T->>BTP: Navigate to Service Marketplace
+    T->>BTP: Subscribe to Multitenant App
+    BTP->>SR: Create Subscription
+    SR->>PA: Trigger onSubscription callback
+    
+    PA->>XSUAA: Create tenant-specific OAuth client
+    XSUAA-->>PA: OAuth client created
+    
+    PA->>DB: Create tenant schema/container
+    DB-->>PA: Schema created
+    
+    PA->>PA: Initialize tenant data
+    PA-->>SR: Subscription successful
+    SR-->>BTP: Subscription confirmed
+    BTP-->>T: Subscription complete
+    
+    Note over T,DB: Tenant can now access the application
+```
+
+<hr>
+
+```mermaid
+---
+title: Deployment Architecture
+---
+graph TB   
+    subgraph "Production Provider Subaccount"
+        PROD[Production k8s cluster]
+        PRODAPP[Provider Application]
+        SAASREG[SaaS Registry]
+        APPREGISTRY[Application Registry]
     end
-
-    subgraph "Service Layer"
-        Microservice(Microservice A)
-    end
-
-
-    %% Define the data flow
-    TenantA_User -->|Request for Tenant A data| API_Gateway
-    TenantB_User -->|Request for Tenant B data| API_Gateway
-    API_Gateway -->|Route request to service| Microservice
+    
+    subgraph "Production Consumer Tenants"
+        subgraph "Tenant A"
+            TENA[Tenant A Instance]
+            DBA[Database A]
+        end
+        
+        subgraph "Tenant B"
+            TENB[Tenant B Instance]
+            DBB[Database B]
+        end
+    end    
+    
+    PRODAPP --> SAASREG
+    SAASREG --> TENA
+    SAASREG --> TENB
+    
+    TENA --> DBA
+    TENB --> DBB
+    
+    %% Styling
+    classDef prod fill:#ffebee,stroke:#c62828
+    classDef tenant fill:#e3f2fd,stroke:#1976d2   
+    class PROD,PRODAPP,SAASREG,APPREGISTRY prod
+    class TENA,TENB,DBA,DBB tenant
 
 ```
 
@@ -876,6 +812,9 @@ Good to know:
 </table> 
 
 ## Summary
+
+- The automation workflows provide ease of use with the emphasis on both security and on lowering the cost of the run with the Day-2 operations
+- The Day-1 self-generated automation workflows templates facilitate the Day-2 operations and allow for targeted extensions of the built-in flows.
 
 
 Continue to - [Exercise 2 - Use External Scalers. Keda](../ex2/README.md)

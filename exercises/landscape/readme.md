@@ -1,182 +1,3 @@
-BTP XP264 master landscape
-=============
-
-All the internal info is aggregated in the following issue:  
-  * https://github.tools.sap/kyma/backlog/issues/7596
-
-
-TODO: Add the picture of the master btp landscape...  
-
-
-<img width="1669" height="841" alt="image" src="https://github.com/user-attachments/assets/5e9093ca-051a-462e-9b93-c2b8132c7166" />
-
-
-## Provider subaccount with shared services
-
-
-  * allow_access
-
-```
-20.39.212.71/32,20.117.177.87/32,172.187.240.229/32,45.148.14.0/24,95.214.184.0/24,13.105.117.0/24,13.105.49.0/24,34.141.69.247,34.159.216.62,34.159.191.69,130.214.104.0/24,20.42.117.61/32,20.84.67.105/32,51.8.106.72/32,130.33.112.244/32,74.176.216.39/32,20.89.73.170/32
-```
-
-  * instance mapping
-
-  * reconfigure hana cloud with another runtime context, for instance: uk-xp264  
-
-In the aftermath, both the allow_access list nad the mappings will be updated
-
-```
-20.39.212.71/32,20.117.177.87/32,172.187.240.229/32,45.148.14.0/24,95.214.184.0/24,13.105.117.0/24,13.105.49.0/24,34.141.69.247,34.159.216.62,34.159.191.69,130.214.104.0/24,20.42.117.61/32,20.84.67.105/32,51.8.106.72/32,130.33.112.244/32,74.176.216.39/32,20.89.73.170/32,172.187.193.188/32,20.117.121.230/32,20.117.240.186/32
-```
-
-## s4hana HE4 destinations definitions  
-
-  * http://s4hana.tdc.sap.com:50080/sap/opu/odata/sap/api_business_partner/?sap-client=400
-
-<img width="1216" height="1028" alt="image" src="https://github.com/user-attachments/assets/b442c666-8bb5-4ad5-a193-7eb98c1daafa" />
-
-### Rehearse the destination definition  
-
-In order to be able to rehearse subaccount level destinations without writing any code all we need is managed SAP Approuter in the context of the subacount.  
-
-The managed SAP Approuter is brought into the context of a subaccount with the SAP Workzone (Launchpad) service plans free or standard.  
-
-SAP Workzone subacription requires the OIDC subaccount trust be established.  This means, you will need a user with the OIDC provider the subaccount has been trusted with.
-
-
-  * https://btp-bootstrap-quovadis-fe2eef75.launchpad.cfapps.eu10.hana.ondemand.com/dynamic_dest/destination-service/destinations/QUOVADIS_HE4  
-<img width="1195" height="455" alt="image" src="https://github.com/user-attachments/assets/641e42b8-887f-4235-81e3-695ce80413f8" />
-
-
-```
-{
-  "owner": {
-    "SubaccountId": "6a7fc37b-a1c4-49f7-989a-92c496bd891a",
-    "InstanceId": null
-  },
-  "destinationConfiguration": {
-    "KeyStorePassword": "Password1",
-    "tokenServiceURLType": "Dedicated",
-    "audience": "HE4_400_GCP",
-    "Description": "QUOVADIS_HE4-api_business_partner",
-    "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession",
-    "tokenServiceUser": "QUOVADIS",
-    "tokenServiceURL": "http://s4hana.tdc.sap.com:50081/sap/bc/sec/oauth2/token?sap-client=400",
-    "sap-client": "400",
-    "URL": "http://s4hana.tdc.sap.com:50081/sap/opu/odata/sap/api_business_partner",
-    "Name": "QUOVADIS_HE4",
-    "tokenServicePassword": "<QUOVADIS client password>",
-    "assertionRecipient": "https://s4hana.tdc.sap.com:50081/sap/bc/sec/oauth2/token?sap-client=400",
-    "Type": "HTTP",
-    "HTML5.DynamicDestination": "true",
-    "KeyStoreLocation": "quovadis_ateam-isveng.p12",
-    "clientKey": "QUOVADIS",
-    "Authentication": "OAuth2SAMLBearerAssertion",
-    "nameIdFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
-    "CloudConnectorLocationId": "he4",
-    "SystemUser": "XP264",
-    "ProxyType": "OnPremise"
-  },
-  "certificates": [
-    {
-      "Content": "MIIQeAIBAzCCEDIGCSqGSIb3DQEHAaCCECMEghAfMIIQGzCCCggGCSqGSIb3DQEHAaCCCfkEggn1MIIJ8TCCCe0GCyqGSIb3DQEMCgECoIIJeHcO5xW0ai3ZkwPTAhMAkGBSsOAwIaBQAEFMyS26dKft/dWRSIVg/SQvDnQmaSBBQTST14Lse+rKA3igKg4Q7gzIB0mAICBAA=",
-      "Name": "quovadis_ateam-isveng.p12",
-      "Type": "CERTIFICATE"
-    }
-  ],
-  "authTokens": [
-    {
-      "type": "Bearer",
-      "value": "GwmDlnqcH9CggrRYHJfc3I9TZgQ76rrgi2EdPYq-5OUyP3Vr",
-      "http_header": {
-        "key": "Authorization",
-        "value": "Bearer GwmDlnqcH9CggrRYHJfc3I9TZgQ76rrgi2EdPYq-5OUyP3Vr"
-      },
-      "expires_in": "3600",
-      "scope": "/IWFND/SG_MED_CATALOG_0001 /IWFND/SG_MED_CATALOG_0002 PYC_CFG_SRV_0001 PYC_CONF_SRV_0001 SAP_BW_INA_GETSERVERINFO_HTTP SAP_BW_INA_SRV_0001 ZAPI_BUSINESS_PARTNER_0001 ZAPI_SALES_ORDER_SRV_0001 ZMD_BUSINESSPARTNER_SRV_0001",
-      "refresh_token": "GwmDlnqcH9CggrRYHJf83CREbIGGtARzGgkqNOuVc9n29LIV"
-    }
-  ]
-}
-```
-
-### Run the destination against the target on premise system
-
-  * https://btp-bootstrap-quovadis-fe2eef75.launchpad.cfapps.eu10.hana.ondemand.com/dynamic_dest/QUOVADIS_HE4/  
-  * https://btp-bootstrap-quovadis-fe2eef75.launchpad.cfapps.eu10.hana.ondemand.com/dynamic_dest/QUOVADIS_HE4/?$format=json
-
-  ```
-  {
-  "d": {
-    "EntitySets": [
-      "A_AddressEmailAddress",
-      "A_AddressFaxNumber",
-      "A_AddressHomePageURL",
-      "A_AddressPhoneNumber",
-      "A_BPAddrDepdntIntlLocNumber",
-      "A_BPContactToAddress",
-      "A_BPContactToFuncAndDept",
-      "A_BPCreditWorthiness",
-      "A_BPDataController",
-      "A_BPEmployment",
-      "A_BPFinancialServicesExtn",
-      "A_BPFinancialServicesReporting",
-      "A_BPFiscalYearInformation",
-      "A_BPIntlAddressVersion",
-      "A_BPRelationship",
-      "A_BPTaxCompliance",
-      "A_BuPaAddressUsage",
-      "A_BuPaIdentification",
-      "A_BuPaIndustry",
-      "A_BusinessPartner",
-      "A_BusinessPartnerAddress",
-      "A_BusinessPartnerAlias",
-      "A_BusinessPartnerBank",
-      "A_BusinessPartnerContact",
-      "A_BusinessPartnerIsBank",
-      "A_BusinessPartnerPaymentCard",
-      "A_BusinessPartnerRating",
-      "A_BusinessPartnerRole",
-      "A_BusinessPartnerTaxNumber",
-      "A_BusPartAddrDepdntTaxNmbr",
-      "A_CustAddrDepdntExtIdentifier",
-      "A_CustAddrDepdntInformation",
-      "A_Customer",
-      "A_CustomerCompany",
-      "A_CustomerCompanyText",
-      "A_CustomerDunning",
-      "A_CustomerSalesArea",
-      "A_CustomerSalesAreaTax",
-      "A_CustomerSalesAreaText",
-      "A_CustomerTaxGrouping",
-      "A_CustomerText",
-      "A_CustomerUnloadingPoint",
-      "A_CustomerWithHoldingTax",
-      "A_CustSalesPartnerFunc",
-      "A_CustSlsAreaAddrDepdntInfo",
-      "A_CustSlsAreaAddrDepdntTaxInfo",
-      "A_CustUnldgPtAddrDepdntInfo",
-      "A_Supplier",
-      "A_SupplierCompany",
-      "A_SupplierCompanyText",
-      "A_SupplierDunning",
-      "A_SupplierPartnerFunc",
-      "A_SupplierPurchasingOrg",
-      "A_SupplierPurchasingOrgText",
-      "A_SupplierText",
-      "A_SupplierWithHoldingTax"
-    ]
-  }
-}
-  ```
-
-
-## Next steps  
-
-
-### Prepare nodejs function code to run this destination via CloudSDK from kyma cluster side  
-
 
 ## jupyter hub
 
@@ -287,4 +108,550 @@ Requirement already satisfied: typing-extensions>=4.0.0 in /usr/local/lib/python
 [notice] To update, run: pip install --upgrade pip
   
 ```
+## SAP BTP Multitenant App - Service Dependencies Chart
+
+
+```mermaid
+---
+title: Service Dependencies Chart
+---
+mindmap
+  root((SAP BTP Multitenant App))
+    Platform Services
+      SAP BTP Kyma, Runtime
+      Application Router
+      SaaS Provisioning Service
+      Service Manager
+    Security Services
+      XSUAA (Authorization)
+      Identity Authentication
+      Credential Store
+      Audit Log Service
+    Persistancy Services
+      SAP HANA Cloud
+      HDI Container Service
+      PostgreSQL
+      Redis Cache with Cloud Manager module
+    Integration Services
+      Destination Service
+      Connectivity Service
+      Transparent Proxy Kyma module
+      API Management
+      Event Mesh
+    Monitoring Services
+      Application Logging
+      Application Performance Monitoring
+      Alert Notification
+      Cloud Logging
+    Development Services
+      VSCode
+      ArgoCDaaS
+      Git Repository
+```
+
+### High-Level Architecture Chart
+
+```mermaid
+graph TB
+    subgraph "SAP BTP Platform"
+        subgraph "Provider Subaccount"
+            PA[Provider Application]
+            PS[Provider Services]
+            SAAS[SaaS Registry]
+            XSUAA[XSUAA Service]
+        end
+        
+        subgraph "Consumer Subaccount 1"
+            CS1[Consumer App Instance]
+            XS1[XSUAA Instance]
+            DB1[Database Instance]
+        end
+        
+        subgraph "Consumer Subaccount 2"
+            CS2[Consumer App Instance]
+            XS2[XSUAA Instance]
+            DB2[Database Instance]
+        end
+    end
+    
+    subgraph "External Systems"
+        S4[SAP S/4HANA]
+        SF[SuccessFactors]
+        EXT[External APIs]
+    end
+    
+    PA --> SAAS
+    PA --> XSUAA
+    SAAS --> CS1
+    SAAS --> CS2
+    
+    CS1 --> XS1
+    CS1 --> DB1
+    CS2 --> XS2
+    CS2 --> DB2
+    
+    PA --> S4
+    PA --> SF
+    PA --> EXT
+    
+    CS1 --> S4
+    CS2 --> SF
+    
+    %% Styling
+    classDef provider fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef consumer fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef external fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    
+    class PA,PS,SAAS provider
+    class CS1,CS2 consumer
+    class S4,SF,EXT external
+    class XSUAA,XS1,XS2,DB1,DB2 service
+```
+
+### Subscription Flow Chart
+
+```mermaid
+---
+title: Subscription Flow Chart
+---
+sequenceDiagram
+    participant T as Tenant Admin
+    participant BTP as SAP BTP Cockpit
+    participant SR as SaaS Registry
+    participant PA as Provider App
+    participant XSUAA as XSUAA Service
+    participant DB as Database
+    
+    T->>BTP: Access BTP Cockpit
+    T->>BTP: Navigate to Service Marketplace
+    T->>BTP: Subscribe to Multitenant App
+    BTP->>SR: Create Subscription
+    SR->>PA: Trigger onSubscription callback
+    
+    PA->>XSUAA: Create tenant-specific OAuth client
+    XSUAA-->>PA: OAuth client created
+    
+    PA->>DB: Create tenant schema/container
+    DB-->>PA: Schema created
+    
+    PA->>PA: Initialize tenant data
+    PA-->>SR: Subscription successful
+    SR-->>BTP: Subscription confirmed
+    BTP-->>T: Subscription complete
+    
+    Note over T,DB: Tenant can now access the application
+```
+
+
+### Tenant Isolation Architecture
+
+```mermaid
+graph TD
+    subgraph "Application Layer"
+        APP[Multitenant Application]
+        AUTH[Authentication Layer]
+        TENANT[Tenant Context Manager]
+    end
+    
+    subgraph "Data Layer Isolation"
+        subgraph "Schema-based Isolation"
+            DB[(Database)]
+            T1S[Tenant 1 Schema]
+            T2S[Tenant 2 Schema]
+            T3S[Tenant 3 Schema]
+        end
+        
+        subgraph "Container-based Isolation"
+            HDI[HDI Container Service]
+            T1C[Tenant 1 Container]
+            T2C[Tenant 2 Container]
+            T3C[Tenant 3 Container]
+        end
+    end
+    
+    subgraph "Service Layer"
+        DEST[Destination Service]
+        CONN[Connectivity Service]
+        XSUAA2[XSUAA Service]
+    end
+    
+    APP --> AUTH
+    AUTH --> TENANT
+    TENANT --> DB
+    TENANT --> HDI
+    
+    DB --> T1S
+    DB --> T2S
+    DB --> T3S
+    
+    HDI --> T1C
+    HDI --> T2C
+    HDI --> T3C
+    
+    APP --> DEST
+    APP --> CONN
+    AUTH --> XSUAA2
+    
+    %% Styling
+    classDef app fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef data fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef tenant fill:#fff8e1,stroke:#ef6c00,stroke-width:2px
+    
+    class APP,AUTH,TENANT app
+    class DB,HDI data
+    class DEST,CONN,XSUAA2 service
+    class T1S,T2S,T3S,T1C,T2C,T3C tenant
+```
+
+
+### Request Flow Chart
+
+```mermaid
+---
+title: Request Flow Chart
+---
+flowchart LR
+    User[End User] --> LB[Load Balancer]
+    LB --> APP[Application Router]
+    APP --> AUTH{Authentication}
+    
+    AUTH -->|Not Authenticated| LOGIN[Login Page]
+    LOGIN --> IDP[Identity Provider]
+    IDP --> XSUAA[XSUAA Service]
+    XSUAA --> JWT[JWT Token]
+    
+    AUTH -->|Authenticated| TENANT[Tenant Resolution]
+    JWT --> TENANT
+    
+    TENANT --> CTX[Set Tenant Context]
+    CTX --> BL[Business Logic]
+    
+    BL --> DATA{Data Access}
+    DATA --> SCHEMA[Tenant Schema]
+    DATA --> CONTAINER[HDI Container]
+    
+    SCHEMA --> RESPONSE[Generate Response]
+    CONTAINER --> RESPONSE
+    RESPONSE --> User
+    
+    %% Styling
+    classDef user fill:#ffcdd2,stroke:#d32f2f
+    classDef auth fill:#c8e6c9,stroke:#388e3c
+    classDef app fill:#fff3e0,stroke:#f57c00
+    classDef data fill:#e1f5fe,stroke:#01579b
+    
+    class User user
+    class LOGIN,IDP,XSUAA,JWT,AUTH auth
+    class LB,APP,TENANT,CTX,BL,RESPONSE app
+    class DATA,SCHEMA,CONTAINER data
+```
+
+
+
+
+
+
+### Deployment Architecture
+
+```mermaid
+---
+title: Deployment Architecture
+---
+graph TB   
+    subgraph "Production Provider"
+        PROD[Production Space]
+        PRODAPP[Provider Application]
+        SAASREG[SaaS Registry]
+        APPREGISTRY[Application Registry]
+    end
+    
+    subgraph "Production Consumer Subaccounts"
+        subgraph "Tenant A"
+            TENA[Tenant A Instance]
+            DBA[Database A]
+        end
+        
+        subgraph "Tenant B"
+            TENB[Tenant B Instance]
+            DBB[Database B]
+        end
+    end    
+    
+    PRODAPP --> SAASREG
+    SAASREG --> TENA
+    SAASREG --> TENB
+    
+    TENA --> DBA
+    TENB --> DBB
+    
+    %% Styling
+    classDef prod fill:#ffebee,stroke:#c62828
+    classDef tenant fill:#e3f2fd,stroke:#1976d2   
+    class PROD,PRODAPP,SAASREG,APPREGISTRY prod
+    class TENA,TENB,DBA,DBB tenant
+
+```
+
+```mermaid
+---
+title: Deployment Architecture - Full version
+---
+graph TB
+    subgraph "Development"
+        DEV[Development Space]
+        DEVAPP[Dev Application]
+        DEVDB[Dev Database]
+    end
+    
+    subgraph "Testing"
+        TEST[Test Space]
+        TESTAPP[Test Application]
+        TESTDB[Test Database]
+    end
+    
+    subgraph "Production Provider"
+        PROD[Production Space]
+        PRODAPP[Provider Application]
+        SAASREG[SaaS Registry]
+        APPREGISTRY[Application Registry]
+    end
+    
+    subgraph "Production Consumer Subaccounts"
+        subgraph "Tenant A"
+            TENA[Tenant A Instance]
+            DBA[Database A]
+        end
+        
+        subgraph "Tenant B"
+            TENB[Tenant B Instance]
+            DBB[Database B]
+        end
+    end
+    
+    subgraph "CI/CD Pipeline"
+        GIT[Git Repository]
+        BUILD[Build Service]
+        DEPLOY[Deployment]
+    end
+    
+    DEV --> TEST
+    TEST --> PROD
+    
+    GIT --> BUILD
+    BUILD --> DEPLOY
+    DEPLOY --> DEVAPP
+    DEPLOY --> TESTAPP
+    DEPLOY --> PRODAPP
+    
+    PRODAPP --> SAASREG
+    SAASREG --> TENA
+    SAASREG --> TENB
+    
+    TENA --> DBA
+    TENB --> DBB
+    
+    %% Styling
+    classDef dev fill:#e8f5e8,stroke:#388e3c
+    classDef test fill:#fff3e0,stroke:#f57c00
+    classDef prod fill:#ffebee,stroke:#c62828
+    classDef tenant fill:#e3f2fd,stroke:#1976d2
+    classDef cicd fill:#f3e5f5,stroke:#7b1fa2
+    
+    class DEV,DEVAPP,DEVDB dev
+    class TEST,TESTAPP,TESTDB test
+    class PROD,PRODAPP,SAASREG,APPREGISTRY prod
+    class TENA,TENB,DBA,DBB tenant
+    class GIT,BUILD,DEPLOY cicd
+```
+
+### Tenant Lifecycle Management
+
+```mermaid
+---
+title: Tenant Lifecycle Management
+---
+stateDiagram-v2
+    [*] --> Available: App Published to Marketplace
+    Available --> Subscribing: Tenant Subscribes
+    Subscribing --> Provisioning: Trigger Callbacks
+    Provisioning --> Active: Provisioning Complete
+    Active --> Updating: Update Subscription
+    Updating --> Active: Update Complete
+    Active --> Suspending: Suspend Tenant
+    Suspending --> Suspended: Suspension Complete
+    Suspended --> Active: Reactivate Tenant
+    Active --> Unsubscribing: Tenant Unsubscribes
+    Suspended --> Unsubscribing: Force Unsubscribe
+    Unsubscribing --> Deprovisioning: Trigger Cleanup
+    Deprovisioning --> [*]: Cleanup Complete
+    
+    Provisioning --> Failed: Provisioning Error
+    Failed --> Available: Retry/Fix Issues
+    Updating --> Failed: Update Error
+    Failed --> Active: Rollback/Fix
+```
+
+
+---------
+
+## Day 2 Operations Overview
+
+```
+Core Components:
+
+1. Monitoring & Observability
+Application performance monitoring (APM)
+Infrastructure monitoring
+Log aggregation and analysis
+Metrics collection and alerting
+Distributed tracing
+
+2. Security & Compliance
+Security patch management
+Vulnerability scanning
+Compliance auditing
+Access control reviews
+Security incident response
+
+3. Performance Optimization
+Resource utilization analysis
+Performance tuning
+Query optimization
+Caching strategies
+Load balancing adjustments
+
+4. Backup & Disaster Recovery
+Regular backup operations
+Backup verification
+Disaster recovery testing
+RTO/RPO compliance
+```
+
+### Day 2 Operations Mermaid Chart Code
+
+```mermaid
+---
+title: Day 2 Operations
+---
+graph TD
+    A[Day 2 Operations] --> B[Monitoring & Observability]
+    A --> C[Security & Compliance]
+    A --> D[Performance Optimization]
+    A --> E[Backup & Disaster Recovery]
+    A --> F[Scaling & Capacity Planning]
+    A --> G[Maintenance & Updates]
+    A --> H[Incident Response]
+    A --> I[Cost Optimization]
+
+    B --> B1[Application Monitoring]
+    B --> B2[Infrastructure Monitoring]
+    B --> B3[Log Management]
+    B --> B4[Metrics & Alerting]
+    B --> B5[Distributed Tracing]
+
+    C --> C1[Security Patches]
+    C --> C2[Vulnerability Scanning]
+    C --> C3[Compliance Auditing]
+    C --> C4[Access Control]
+    C --> C5[Security Incidents]
+
+    D --> D1[Resource Optimization]
+    D --> D2[Query Tuning]
+    D --> D3[Caching Strategies]
+    D --> D4[Load Balancing]
+    D --> D5[Performance Testing]
+
+    E --> E1[Regular Backups]
+    E --> E2[Backup Verification]
+    E --> E3[DR Testing]
+    E --> E4[RTO/RPO Planning]
+    E --> E5[Data Retention]
+
+    F --> F1[Auto-scaling]
+    F --> F2[Capacity Forecasting]
+    F --> F3[Resource Provisioning]
+    F --> F4[Performance Benchmarks]
+    F --> F5[Growth Planning]
+
+    G --> G1[Software Updates]
+    G --> G2[Configuration Management]
+    G --> G3[Database Maintenance]
+    G --> G4[Certificate Renewal]
+    G --> G5[Dependency Updates]
+
+    H --> H1[Alert Management]
+    H --> H2[Incident Escalation]
+    H --> H3[Root Cause Analysis]
+    H --> H4[Post-mortem Reviews]
+    H --> H5[Process Improvement]
+
+    I --> I1[Resource Optimization]
+    I --> I2[Usage Analysis]
+    I --> I3[Cost Monitoring]
+    I --> I4[Budget Planning]
+    I --> I5[Waste Elimination]
+
+    %% Feedback loops
+    B4 --> H1
+    H5 --> B4
+    D1 --> I1
+    F2 --> I2
+    C2 --> C1
+    E3 --> E4
+
+    %% Styling
+    classDef mainNode fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef categoryNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef activityNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:1px
+
+    class A mainNode
+    class B,C,D,E,F,G,H,I categoryNode
+    class B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5,F1,F2,F3,F4,F5,G1,G2,G3,G4,G5,H1,H2,H3,H4,H5,I1,I2,I3,I4,I5 activityNode
+```
+
+### Day 2 Operations - Alternative flow chart version
+
+```mermaid
+---
+title: Day 2 Operations - Alternative flow chart version
+---
+flowchart LR
+    Start([Day 2 Operations Start]) --> Monitor{Monitoring}
+    Monitor --> Alert[Alert Triggered?]
+    Alert -->|Yes| Incident[Incident Response]
+    Alert -->|No| Optimize[Performance Optimization]
+    
+    Incident --> Analyze[Root Cause Analysis]
+    Analyze --> Fix[Implement Fix]
+    Fix --> Test[Test Solution]
+    Test --> Deploy[Deploy Fix]
+    Deploy --> PostMortem[Post-mortem Review]
+    PostMortem --> Improve[Process Improvement]
+    
+    Optimize --> Scale{Scaling Needed?}
+    Scale -->|Yes| Provision[Provision Resources]
+    Scale -->|No| Maintain[Maintenance Tasks]
+    
+    Provision --> Update[Update Capacity Plans]
+    Update --> Maintain
+    
+    Maintain --> Security[Security Updates]
+    Security --> Backup[Backup Operations]
+    Backup --> Cost[Cost Optimization]
+    Cost --> Monitor
+    
+    Improve --> Monitor
+    
+    %% Styling
+    classDef startEnd fill:#ffcdd2,stroke:#d32f2f
+    classDef process fill:#c8e6c9,stroke:#388e3c
+    classDef decision fill:#fff3e0,stroke:#f57c00
+    
+    class Start,PostMortem startEnd
+    class Monitor,Incident,Analyze,Fix,Test,Deploy,Optimize,Provision,Update,Maintain,Security,Backup,Cost,Improve process
+    class Alert,Scale decision
+```
+
 

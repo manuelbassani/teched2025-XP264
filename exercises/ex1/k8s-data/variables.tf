@@ -24,8 +24,8 @@ variable "BTP_CUSTOM_IDP" {
 
 variable "POSTGRES_ALLOW_ACCESS" {
   type        = string
-  description = "allow_access IPs and/ir CI/DRs + cluster egress ips"
-  default     = "" // defaults to no allow access
+  description = "allow_access IPs and/or CI/DRs + cluster egress ips"
+  default     = "" 
 }
 
 variable  "runtime_context_workspace" {
