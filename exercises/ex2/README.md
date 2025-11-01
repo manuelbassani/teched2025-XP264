@@ -17,8 +17,8 @@
 > - A dedicated Python Function is provided, in every single student namespace, with the replicas value set to 1 to prevent the internal Serverless HPA creation.
 
 
-👉 Run the provided github actions workflows to experience both HPA and KEDA
-👉 Take time to inspect the workflows run logs.  
+- 👉 Run the provided github actions workflows to experience both HPA and KEDA
+- 👉 Take time to inspect the workflows run logs.  
 
 > [!TIP]
 > You may use kyma dashboard for interactive inspection as well
