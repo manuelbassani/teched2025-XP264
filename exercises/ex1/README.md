@@ -14,7 +14,9 @@ Summary of the routines or days:
 - Day-1 -- Configuration and Deployment
 - Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
 
-The below charts provide different perspectives on Day 2 operations - from process flow to timeline-based activities.
+<hr>
+
+- The below charts provide different perspectives on Day 2 operations - from process flow to timeline-based activities.
 
 
 ```mermaid
@@ -82,7 +84,7 @@ gantt
     Alert Processing         :alert, 00:00, 24:00
     
     section Daily Tasks
-    Security Patches (SAP SRE)         :patch, 02:00, 04:00
+    Security Patches (SAP SRE):patch, 02:00, 04:00
     Backup Verification      :backup, 03:00, 05:00
     Performance Review       :perf, 08:00, 10:00
     Cost Analysis           :cost, 14:00, 16:00
