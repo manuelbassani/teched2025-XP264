@@ -21,8 +21,11 @@
 
 > [!NOTE]
 > Pre-requisites:
-> - A Python Function, in every single student namespace, with the replicas value set to 1 to prevent the internal Serverless HPA creation.
+> - A Python Function is provided, in every single student namespace, with the replicas value set to 1 to prevent the internal Serverless HPA creation.
 
+
+- 👉 run the `k8s-hpa-keda-load-generator` worflow
+- 👉 For the best experience, open the workflow link into into a new window (right click).  
 
  |  k8s HPA-KEDA load generator workflow (namespaced)
  | :---------  |
@@ -31,7 +34,11 @@
 
 ## Exercise 2.1 - HPA
 
+- 👉 run the `k8s-hpa-student` worflow
 - 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
+
+
+
 
  |  k8s HPA student workflow (namespaced)
  | :---------  |
@@ -40,19 +47,13 @@
 
 The below steps are for illustration only. Please use the provided github actions workflows instead.
 
-
-
-https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-horizontalpodautoscaler-in-kubectl  
-
-https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale  
-
 - step1:
 Initially deployed serveless python 3.12 function with a single replica....  
 As shown below, no HPA in place yet:  
 
 > [!NOTE]
 >```rust
->kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml
+>kubectl get hpa faas-srv  -n xp264-050 
 >```
 > `Error from server (NotFound): horizontalpodautoscalers.autoscaling "faas-srv" not found`
 
@@ -62,7 +63,7 @@ Scale-out to 5 replicas
 
 > [!NOTE]
 >```rust
-> kubectl autoscale function faas-srv  -n xp264-050 --cpu-percent=50 --min=5 --max=10 --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml
+> kubectl autoscale function faas-srv  -n xp264-050 --cpu-percent=50 --min=5 --max=10
 >```
 > `horizontalpodautoscaler.autoscaling/faas-srv autoscaled`
 
@@ -73,12 +74,12 @@ After a little while the HPA will be up and running:
 
 > [!NOTE]
 >```rust
-> kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml                                             
+> kubectl get hpa faas-srv  -n xp264-050                             
 > NAME       REFERENCE           TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
 > faas-srv   Function/faas-srv   cpu: <unknown>/50%   5         10        0          11s
 >```
 >```rust
-> kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml
+> kubectl get hpa faas-srv  -n xp264-050 
 > NAME       REFERENCE           TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
 > faas-srv   Function/faas-srv   cpu: 3%/50%   5         10        5          93s
 >```
@@ -87,20 +88,22 @@ After a little while the HPA will be up and running:
 scale down from 5 to 2 replicas by editiong the `horizontalpodautoscaler.autoscaling/faas-srv` resource
 
 ```
-kubectl edit hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml
+kubectl edit hpa faas-srv  -n xp264-050 
 horizontalpodautoscaler.autoscaling/faas-srv edited
 ```
 
 - step5:
-scale back to a single replica. how this is to be done ?
-
-In order to scale down from 2 or 5 replicas to 1 replica just remove the HPA resource?
+scale back to a single replica.
 
 
 
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-horizontalpodautoscaler-in-kubectl  
+
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#autoscale  
 
 ## Exercise 2.2 - KEDA
 
+- 👉 run the `k8s-keda-student` worflow
 - 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).
 
  |  k8s KEDA student workflow (namespaced)
@@ -133,12 +136,11 @@ In order to scale down from 2 or 5 replicas to 1 replica just remove the HPA res
 >EOF
 > ~~~
 
-`scaledobject.keda.sh/faas-srv created`
-
 
 
 ## Exercise 2.3 - KEDA's Cron-Based Scaler
 
+- 👉 run the `k8s-keda-cron-student` worflow
 - 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).
 
  |  k8s KEDA CRON student workflow (namespaced)
