@@ -670,15 +670,13 @@ sequenceDiagram
     Note over T,DB: Tenant can now access the application
 ```
 
-
+<hr>
 
 ```mermaid
 ---
 title: Deployment Architecture
 ---
-graph TB
-
-    
+graph TB   
     subgraph "Production Provider"
         PROD[Production Space]
         PRODAPP[Provider Application]
@@ -706,17 +704,10 @@ graph TB
     TENB --> DBB
     
     %% Styling
-    classDef dev fill:#e8f5e8,stroke:#388e3c
-    classDef test fill:#fff3e0,stroke:#f57c00
     classDef prod fill:#ffebee,stroke:#c62828
-    classDef tenant fill:#e3f2fd,stroke:#1976d2
-    classDef cicd fill:#f3e5f5,stroke:#7b1fa2
-    
-    class DEV,DEVAPP,DEVDB dev
-    class TEST,TESTAPP,TESTDB test
+    classDef tenant fill:#e3f2fd,stroke:#1976d2   
     class PROD,PRODAPP,SAASREG,APPREGISTRY prod
     class TENA,TENB,DBA,DBB tenant
-    class GIT,BUILD,DEPLOY cicd
 
 ```
 
