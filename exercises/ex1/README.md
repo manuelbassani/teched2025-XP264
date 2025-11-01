@@ -584,13 +584,9 @@ sequenceDiagram
 
 - 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
-| Kyma BTP Region (Cockpit) |  Kyma dashboard | Data Collection Workflow (namespaced)
- | :---------  | :--------- | :------- |
- | [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://url.sap/x2ygbf) | [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://url.sap/0ysrs1 ) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="75" />](https://url.sap/ui217f) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://url.sap/9waari ) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://url.sap/3wchu2 ) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+ |  Data Collection Workflow (namespaced)
+ | :---------  |
+ | [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
 
 
 </div>  
