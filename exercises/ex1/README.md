@@ -19,28 +19,79 @@ config:
   theme: redux
   look: classic
 ---
-graph TD
-    A[Application Deployed - Day-2 Operations begin] --> B(Monitor Performance & Health);
-    B --> C{Issue Detected?};
-    C -- No --> D(Maintain & Optimize);
-    C -- Yes --> E(Alert On-Call SRE Team / Raise SAP Support incident);
-    E --> F(Diagnose & Investigate Incident);
-    F --> G{Root Cause Identified?};
-    G -- No --> F;
-    G -- Yes --> H(Formulate Fix);
-    H --> I(Deploy Hotfix or Configuration Change);
-    I --> B;
-    D --> J(Gather Metrics & Logs);
-    D --> K(Perform Routine Maintenance);
-    K --> L{Maintenance Complete?};
-    L -- Yes --> D;
-    J --> M(Analyze Data);
-    M --> N{Optimization Opportunities?};
-    N -- Yes --> O(Implement Improvements);
-    N -- No --> D;
-    O --> P(Deploy New Release);
-    P --> B;
+gantt
+    title Day 2 Operations Timeline
+    dateFormat  HH:mm
+    axisFormat %H:%M
+    
+    section Monitoring
+    Continuous Monitoring    :active, monitor, 00:00, 24:00
+    Alert Processing         :alert, 00:00, 24:00
+    
+    section Daily Tasks
+    Security Patches         :patch, 02:00, 04:00
+    Backup Verification      :backup, 03:00, 05:00
+    Performance Review       :perf, 08:00, 10:00
+    Cost Analysis           :cost, 14:00, 16:00
+    
+    section Weekly Tasks
+    Capacity Planning       :capacity, 09:00, 12:00
+    DR Testing             :dr, 10:00, 14:00
+    Security Audit         :audit, 13:00, 17:00
+    
+    section Monthly Tasks
+    Post-mortem Reviews    :review, 09:00, 11:00
+    Process Optimization   :optimize, 11:00, 15:00
+    Compliance Check       :compliance, 15:00, 17:00
 ```
+</div>
+
+<div>
+
+  
+```mermaid
+---
+config:
+  theme: redux
+  look: classic
+---
+flowchart LR
+    Start([Day 2 Operations Start]) --> Monitor{Monitoring}
+    Monitor --> Alert[Alert Triggered?]
+    Alert -->|Yes| Incident[Incident Response]
+    Alert -->|No| Optimize[Performance Optimization]
+    
+    Incident --> Analyze[Root Cause Analysis]
+    Analyze --> Fix[Implement Fix]
+    Fix --> Test[Test Solution]
+    Test --> Deploy[Deploy Fix]
+    Deploy --> PostMortem[Post-mortem Review]
+    PostMortem --> Improve[Process Improvement]
+    
+    Optimize --> Scale{Scaling Needed?}
+    Scale -->|Yes| Provision[Provision Resources]
+    Scale -->|No| Maintain[Maintenance Tasks]
+    
+    Provision --> Update[Update Capacity Plans]
+    Update --> Maintain
+    
+    Maintain --> Security[Security Updates]
+    Security --> Backup[Backup Operations]
+    Backup --> Cost[Cost Optimization]
+    Cost --> Monitor
+    
+    Improve --> Monitor
+    
+    %% Styling
+    classDef startEnd fill:#ffcdd2,stroke:#d32f2f
+    classDef process fill:#c8e6c9,stroke:#388e3c
+    classDef decision fill:#fff3e0,stroke:#f57c00
+    
+    class Start,PostMortem startEnd
+    class Monitor,Incident,Analyze,Fix,Test,Deploy,Optimize,Provision,Update,Maintain,Security,Backup,Cost,Improve process
+    class Alert,Scale decision
+```
+
 
 </div>
 </td>
