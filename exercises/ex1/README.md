@@ -448,7 +448,7 @@ There are mutliple ways to gain access to a kyma cluster in XP264 session landsc
 
 The first two methods require a kubectl oidc plugin and cannot be performed in a headless context, for instance in a CI/CD pipeline or workflow.  
 
-> [!NOTE]
+<!-- > [!NOTE]
 >
 > * For convenience, here goes the table with the links to all btp and k8s resources...  
 > * You can initially download the kubeconfig from one of the links below or directly from any SAP Kyma dashboard.  
@@ -460,7 +460,7 @@ The first two methods require a kubectl oidc plugin and cannot be performed in a
 > | [us-east](https://url.sap/b24wtp) | https://url.sap/57qy47 | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="35" />](https://url.sap/ui217f) 
 > | [xp264-000](https://url.sap/v2dn5g) | https://url.sap/jdleyl | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="35" />](https://url.sap/9waari ) 
 > | [uk-xp264](https://url.sap/ovbfn6) |https://url.sap/tyapw7 | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="35" />](https://url.sap/3wchu2 ) 
-
+ -->
 
 > [!TIP]
 > 
@@ -477,7 +477,6 @@ Practice:
 [k8s-fire-fighter-student](../../../../actions/workflows/k8s-fire-fighter-student.yml) 
 
 
-
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
@@ -489,6 +488,8 @@ Practice:
 </tr>
 </tbody>
 </table> 
+
+👉 Download the artifacts and upload them into an empty [kyma dashboard](https://dashboard.kyma.cloud.sap/clusters)
 
 
 ## Exercise 1.5 - Terraforming kyma runtime environment
