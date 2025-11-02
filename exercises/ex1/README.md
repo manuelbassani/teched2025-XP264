@@ -681,7 +681,7 @@ graph TB
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://url.sap/yqpkvr">
+<h1><a href="../../../../actions/workflows/teched-xp264-mt.yml">
 <p float="left">
   <img src="../ex1/images/subscription-job.png" width="450" height="600"/>
   <img src="../ex1/images/subscription-manifest.png" width="450" height="600"/>
@@ -700,7 +700,7 @@ graph TB
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://url.sap/yqpkvr">
+<h1><a href="../../../../actions/workflows/teched-xp264-mt.yml">
 <p float="left">
   <img src="../ex1/images/subscribed-app.png" height="800"/> 
 </p>
@@ -711,15 +711,16 @@ graph TB
 </tbody>
 </table> 
 
-Good to know:
-- There is a single subscription in each consumer tenant (a BTP subaccount)
-- All students users as a group can access every subscription in each consumer tenant...
-- However, the access to the subscribed app is SSO-ringfenced...
-- All the subsciptions can be viewed from the subscription dashboard on the provider side...
-- The workflow can be used to unsubscribe. If you choose to do it, please make sure you use the allocated students name.
-
-
-- If this happens to be a first time subscription, please let me go the consumer tenant and disable the SAP IDS for user logon, as depicted below:
+> [!TIP]
+>
+> - There is a single subscription in each consumer tenant (a BTP subaccount)
+> - All students users as a group can access every subscription in each consumer tenant...
+> - However, the access to the subscribed app is SSO-ringfenced...
+> - All the subsciptions can be viewed from the subscription dashboard on the provider side...
+> - The workflow can be used to unsubscribe. If you choose to do it, please make sure you use the allocated students name.
+> 
+>
+> - If this happens to be a first time subscription, please let me go the consumer tenant and disable the SAP IDS for user logon, as depicted below:
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -739,7 +740,9 @@ Good to know:
 </tbody>
 </table> 
 
-- Please observe the consumer context is very much empty. The consumer subaccount acts as a service provider ensuring user authentication and permissions validation in order to access the subscription.
+> [!TIP]
+>
+> - Please observe the consumer context is very much empty. The consumer subaccount acts as a service provider ensuring user authentication and permissions validation in order to access the subscription.
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
