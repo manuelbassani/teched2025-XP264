@@ -544,21 +544,28 @@ sequenceDiagram
 
 </div>
 
-<div>
 
-Optional practice (requires VSCode):
+</td>
+</tr>
+</tbody>
+</table>  
 
+Optional practice (requires VSCode):  
 - 👉 Let's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
 
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
 <h1><a href="../../../../actions/workflows/k8s-data-context-student.yml"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
 
 </div>  
 </td>
 </tr>
 </tbody>
-</table>  
-
-
+</table> 
 
 - 👉 run: `export KUBE_CONFIG_PATH=~/Downloads/kubeconfig_sa/my-kubeconfig_sa.yaml`
 - 👉 run: `terraform init`
