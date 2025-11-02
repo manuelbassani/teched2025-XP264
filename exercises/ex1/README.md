@@ -491,6 +491,20 @@ Practice:
 
 👉 Download the artifacts and upload them into an empty [kyma dashboard](https://dashboard.kyma.cloud.sap/clusters)
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div> 
+<h1><a href="../../../../actions/workflows/k8s-fire-fighter-student.yml"><img class="aligncenter" src="../ex1/images/k8s-fire-fighter-student-artifacts.png" alt="artifacts" height="600"/></a></h1>
+</div>
+<div> 
+<h1><a href="https://dashboard.kyma.cloud.sap/clusters"><img class="aligncenter" src="../ex1/images/k8s-connect-cluster.png" alt="kyma dashboard" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
 
 ## Exercise 1.5 - Terraforming kyma runtime environment
 
