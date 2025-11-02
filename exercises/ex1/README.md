@@ -505,6 +505,9 @@ Accessing other diagnostic information with btp and kubernetes terraform provide
 Practice:  
 - 👉 Run the Data Collection Workflow
 
+ |  Data Collection Workflow (namespaced)
+ | :---------  |
+ | [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -528,13 +531,10 @@ sequenceDiagram
 
 <div>
 
-Practice:  
-- 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
- |  Data Collection Workflow (namespaced)
- | :---------  |
- | [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+- 👉 Let's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
 
+<h1><a href="../../../../actions/workflows/k8s-data-context-student.yml"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
 
 </div>  
 </td>
@@ -542,22 +542,6 @@ Practice:
 </tbody>
 </table>  
 
-
-
-- 👉 Let's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
-
-
-<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
-<tbody>
-<tr style="height: 193px;">
-<td style="width: 71.6%; height: 193px;">
-<div> 
-<h1><a href="../../../../actions/workflows/k8s-data-context-student.yml"><img class="aligncenter" src="images/k8s-data-context-artifacts.png" alt="" height="600"/></a></h1>
-</div>
-</td>
-</tr>
-</tbody>
-</table> 
 
 
 - 👉 run: `export KUBE_CONFIG_PATH=~/Downloads/kubeconfig_sa/my-kubeconfig_sa.yaml`
