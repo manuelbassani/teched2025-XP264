@@ -183,7 +183,7 @@ https://url.sap/h4ioc0), in the Chrome browser on the **provided** teched laptop
   * [Exercise 5.1 - Navigate to your working Namespace in Kyma Dashboard](exercises/ex5#exercise-51-navigate-to-your-working-namespace-in-kyma-dashboard)
   * [Exercise 5.2 - Create a dynamic Destination Custom Resource](exercises/ex5#exercise-52-create-a-dynamic-destination-custom-resource)
   * [Exercise 5.3 - Create a static Destination Custom Resource](exercises/ex5#exercise-53-create-a-static-destination-custom-resource)
-  * [Exercise 5.4 - Explore the results of the creation of the Destination CRs via Kubectl](exercises/ex5#exercise-54-explore-the-results-of-the-creation-of-the-destination-crs-via-kubectl)
+  * [Exercise 5.4 - Explore the results of the creation of the Destination CRs](exercises/ex5#exercise-54-explore-the-results-of-the-creation-of-the-destination-crs)
 
 * #### [Exercise 6 - Use Transparent Proxy Kyma Module](exercises/ex6#exercise-6---use-transparent-proxy-kyma-module)
 
