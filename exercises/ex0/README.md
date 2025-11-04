@@ -131,15 +131,13 @@ graph TB
             CLS --> OSC
         end
         
-        subgraph REGION_EU["☁️ Europe (cf-eu20)"]
+        subgraph REGION_EU["☁️ Europe (uk-south)"]
             RT1_EU[RT1: Production EU]
             RT4_EU[RT4: Development]
             RT5_EU[RT5: QA/Test]
             RT6_EU[RT6: Staging]
             RT7_EU[RT7: Integration]
-            RT8_EU[RT8: Sandbox]
-            
-            KYMA_EU[Kyma Runtime<br/>xp264-001]
+
             KYMA_UK[Kyma Runtime<br/>uk-south]
             KYMA_UK2[Kyma Runtime<br/>xp264-050]
             KYMA_UK3[Kyma Runtime<br/>xp264-045]
@@ -147,14 +145,19 @@ graph TB
             KYMA_UK5[Kyma Runtime<br/>uk-xp264]
             
             RT1_EU --> KYMA_UK
-            RT1_EU --> KYMA_EU
             RT4_EU --> KYMA_UK2
             RT5_EU --> KYMA_UK3
             RT6_EU --> KYMA_UK4
             RT7_EU --> KYMA_UK5
-            RT8_EU --> KYMA_UK
         end
-        
+
+        subgraph REGION_EU2["☁️ Europe (uk-central)"]
+            RT8_EU[RT8: Sandbox]
+            KYMA_EU2[Kyma Runtime<br/>xp264-001]
+            RT8_EU --> KYMA_EU2
+        end
+
+
         subgraph REGION_US["☁️ United States (us-east)"]
             RT2_US[RT2: Production US]
             KYMA_US[Kyma Runtime<br/>us-east]
@@ -200,6 +203,7 @@ graph TB
     style RT6_EU fill:#f0ab00,color:#000
     style RT7_EU fill:#f0ab00,color:#000
     style RT8_EU fill:#ff6666,color:#fff
+ 
 ```
 
 </div>
